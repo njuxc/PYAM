@@ -1,0 +1,3 @@
+bug fix for issue #3526
+
+Some of the pairwise distances do not support the additional `squared` parameter. I suggest using `sqeuclidian` and such whenever this is required.

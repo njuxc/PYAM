@@ -1,0 +1,1 @@
+Fixed #23333 -- Made urlsafe_base64_decode() return proper type on Python 3.

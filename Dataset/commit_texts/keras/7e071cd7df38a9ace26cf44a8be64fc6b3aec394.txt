@@ -1,0 +1,2 @@
+Bug fix : Model.from_config (#5730)
+

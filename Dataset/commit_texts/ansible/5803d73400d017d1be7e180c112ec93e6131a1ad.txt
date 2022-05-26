@@ -1,0 +1,10 @@
+Bugfixes in Netbox inventory (#45731)
+
+* Fix headers and params in netbox queries
+
+Fix token authentication
+Remove unused variables regarding api params and headers
+
+* Fix python 3 incompatibility in netbox inventory
+
+* Cleaning BOTMETA entry

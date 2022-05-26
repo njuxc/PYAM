@@ -1,0 +1,9 @@
+Stopped calling apps.get_model with only_installed=False.
+
+ContentTypes are only created for installed applications, and I could
+make a case for not returning a model that isn't installed any more.
+The check for stale ContentTypes in update_contenttypes doesn't use
+model_class.
+
+ModelSignal actually needs get_registered_model since the lookup happens
+at import time. I took this opportunity to perform a small refactoring.

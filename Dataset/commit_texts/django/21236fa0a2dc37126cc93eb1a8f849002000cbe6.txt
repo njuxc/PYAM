@@ -1,0 +1,10 @@
+Fixed test failure that was occurring since r12908
+
+The tests were relying on being able to do
+ManyToManyField("NameOfThisModel") instead of the only documented method for
+recursive relationships, namely ManyToManyField("self").  The former stopped
+working when the fix in r12908 was applied.
+
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12932 bcc190cf-cafb-0310-a4f2-bffc1f526a37

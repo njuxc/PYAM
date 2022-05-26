@@ -1,0 +1,9 @@
+Chunking on both arrays in euclidean_distances_argmin
+
+Chunking is now possible on both arrays in euclidean_distances_argmin.
+The default chunking scheme has been tested for various array sizes, and
+seem to be at least as fast as euclidean_distances + argmin invocation,
+while using a lot less memory (around 50 times).
+
+At the same time, check_pairwise_arrays has been improved to not copy
+arrays that have a np.float dtype.

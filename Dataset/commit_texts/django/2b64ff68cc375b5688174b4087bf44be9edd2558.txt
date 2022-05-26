@@ -1,0 +1,1 @@
+Fixed #27180 -- Fixed a crash in MySQL checks where SELECT @@sql_mode doesn't return a result.

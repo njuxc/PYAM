@@ -1,0 +1,2 @@
+fix a bug, load_weights doesn't return anything (#11031)
+

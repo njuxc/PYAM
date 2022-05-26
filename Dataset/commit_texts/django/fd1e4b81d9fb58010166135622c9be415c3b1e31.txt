@@ -1,0 +1,4 @@
+Fixed #13095 -- `formfield_callback` keyword argument is now more sane and works with widgets defined in `ModelForm.Meta.widgets`.  Thanks, hvdklauw for bug report, vung for initial patch, and carljm for review.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@13730 bcc190cf-cafb-0310-a4f2-bffc1f526a37

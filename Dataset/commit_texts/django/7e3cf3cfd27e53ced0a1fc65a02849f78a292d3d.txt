@@ -1,0 +1,7 @@
+Fixed constant_time_compare on Python 2.7.7
+
+Python 2.7.7 includes compare_digest in the hmac module, but it requires
+both arguments to have the same type. This is usually not a problem on
+Python 3 since everything is text, but we have mixed unicode and str on
+Python 2 -- hence make sure everything is bytes before feeding it into
+compare_digest.

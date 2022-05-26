@@ -1,0 +1,7 @@
+[AIRFLOW-926] Fix JDBC Hook
+
+JayDeBeApi made a backwards incompatible change
+This updates the JDBC Hook's implementation
+and changes the required JayDeBeApi to >= 1.1.1
+
+Closes #2651 from r-richmond/AIRFLOW-926

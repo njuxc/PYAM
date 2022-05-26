@@ -1,0 +1,7 @@
+Fetching databricks host from connection if not supplied in extras. (#10762)
+
+* Fetching databricks host from connection if not supplied in extras.
+
+* Fixing formatting issue in databricks test
+
+Co-authored-by: joshi95 <shubham@playsimple.in>

@@ -1,0 +1,3 @@
+ENH check that classifier decision_function and predict_proba validate shape of input.
+
+Closes #864.

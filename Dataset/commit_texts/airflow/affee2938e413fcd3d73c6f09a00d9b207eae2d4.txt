@@ -1,0 +1,8 @@
+Fix locking issue stopping tasks running with SequentialExecutor (#11797)
+
+Missing a commit means that the the row level lock was not released
+before `executor.heartbeat()` was called.  This was only a problem for
+the SequentialExecutor, as all the other executors would continue
+running the scheduler code so the lock would be released shortly after
+tasks are sent to the executor anyway. (Where as SequentialExecutor
+doesn't return control until tasks have run!)

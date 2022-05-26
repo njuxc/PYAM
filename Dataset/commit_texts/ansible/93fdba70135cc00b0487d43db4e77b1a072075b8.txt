@@ -1,0 +1,7 @@
+[bugfix][coverage] find module should consider file size with file_type=any (#74241)
+
+* add changelog
+* fix cl text
+* Update changelogs/fragments/74241-find-checks-size-with-any.yml
+
+Co-authored-by: Rick Elrod <rick@elrod.me>

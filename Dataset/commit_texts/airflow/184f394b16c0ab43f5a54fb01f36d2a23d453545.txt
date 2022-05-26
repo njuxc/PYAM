@@ -1,0 +1,9 @@
+Use try/except when closing temporary file in task_runner (#18269)
+
+Occasionally we get FileNotFoundError when calling close on the named temporary file,
+the reason I believe is that the file has been removed by the subprocess before we call
+close on it.
+
+When NamedTemporary file is instantiated  with delete=True, calling close on the file deletes the file
+
+This PR adds a try/except when calling the close method to capture the error

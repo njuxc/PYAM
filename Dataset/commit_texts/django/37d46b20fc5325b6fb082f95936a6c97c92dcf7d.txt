@@ -1,0 +1,1 @@
+Fixed regression introduced by efd1e60, 'map' returns an iterator on PY3.

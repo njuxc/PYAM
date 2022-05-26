@@ -1,0 +1,2 @@
+ENH: try to preserve the dtype on combine_first for the case where the two DataFrame objects have the same columns (#39051)
+

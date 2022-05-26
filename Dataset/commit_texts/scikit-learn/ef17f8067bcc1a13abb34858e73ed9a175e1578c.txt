@@ -1,0 +1,12 @@
+ENH: Improvements in the Theil-Sen regressor
+
+- Renamed TheilSen to TheilSenRegressor
+- Renamed n_iter parameter to max_iter
+- Better warning message when maximum iteration number reached
+- Added docstring for fit
+- Removed backend and max_nbytes parameters in Parallel
+- Removed n_dim return value from _check_subparams
+- Some PEP8 corrections
+- Added an attribute n_iter_ to show number of iterations
+- Removed unnecessary array to list conversion ix = list(ix)
+- Remove random_state_ as attribute

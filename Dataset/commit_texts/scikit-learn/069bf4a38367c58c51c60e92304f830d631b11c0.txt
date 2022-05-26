@@ -1,0 +1,1 @@
+Fixed bug in plot_rbf_parameters.py causing only one figure to show

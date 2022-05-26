@@ -1,0 +1,2 @@
+Bug fix: Don't change original dict in from_config (#7903)
+

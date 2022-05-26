@@ -1,0 +1,2 @@
+read_excel() modifies provided types dict when accessing file with duplicate column (#42508)
+

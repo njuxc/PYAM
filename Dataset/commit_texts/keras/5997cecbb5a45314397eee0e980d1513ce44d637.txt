@@ -1,0 +1,5 @@
+Fix all the learning rate scheduler for non-default constant dtypes.
+
+This is a update for https://github.com/tensorflow/tensorflow/pull/50287.
+
+PiperOrigin-RevId: 383705736

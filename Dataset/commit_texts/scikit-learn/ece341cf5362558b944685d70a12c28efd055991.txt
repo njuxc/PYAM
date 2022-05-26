@@ -1,0 +1,2 @@
+[MRG+1] Fixes #9199 - Fitting a NearestNeighbors model fails with sparse input and a callable as metric (#9579)
+

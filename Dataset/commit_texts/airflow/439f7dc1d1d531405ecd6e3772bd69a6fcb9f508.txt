@@ -1,0 +1,7 @@
+Use check_output to capture in celery task (#10310)
+
+See: https://docs.python.org/3/library/subprocess.html#subprocess.CalledProcessError
+
+The check_call does not set output to the subprocess.CalledProcessError so the log.error(e.output) code is always None.
+
+By using check_ouput, when there is CalledProcessError, it will correctly log the error output

@@ -1,0 +1,4 @@
+Refs #23433 -- Fixed test_django_admin_py.DeprecationTest tests failures on Windows and Python < 3.8.
+
+subprocess.run()'s args parameter accepts a path-like object on Windows
+since Python 3.8.

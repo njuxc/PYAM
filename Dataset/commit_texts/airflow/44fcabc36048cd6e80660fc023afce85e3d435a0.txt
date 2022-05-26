@@ -1,0 +1,19 @@
+[AIRFLOW-809][AIRFLOW-1] Use __eq__ ColumnOperator When Testing Booleans
+
+The .is_ ColumnOperator causes the SqlAlchemy's
+MSSQL dialect to produce
+IS 0 when given a value of False rather than a
+value of None. The __eq__
+ColumnOperator does this same test with the added
+benefit that it will
+modify the resulting expression from and == to a
+IS NULL when the target
+is None.
+
+This change replaces all is_ ColumnOperators that
+are doing boolean
+comparisons and leaves all is_ ColumnOperators
+that are checking for
+None values.
+
+Closes #2022 from gritlogic/AIRFLOW-809

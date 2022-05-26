@@ -1,0 +1,4 @@
+[MRG+1] Fix bug in StratifiedShuffleSplit for multi-label data with targets having > 1000 labels (#9922)
+
+* Use ' '.join(row) for multi-label targets in StratifiedShuffleSplit because str(row) uses an ellipsis when len(row) > 1000
+* Add a new test for multilabel problems with more than a thousand labels

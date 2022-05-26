@@ -1,0 +1,1 @@
+Removed densification calls on X  '.asarry()' from all predict methods, removed 'dense' parameter from check arrays call, removed contiguous cast of the input array X, detected X as list or array to find the number of examples accordinly using len() or shape[0]

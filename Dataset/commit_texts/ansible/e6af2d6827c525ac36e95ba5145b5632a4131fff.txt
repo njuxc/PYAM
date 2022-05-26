@@ -1,0 +1,5 @@
+Fix ansible-test coverage traceback when no data.
+
+If no coverage directory exists, ansible-test coverage would traceback.
+
+Now it silently continues just as if the directory was present but empty.

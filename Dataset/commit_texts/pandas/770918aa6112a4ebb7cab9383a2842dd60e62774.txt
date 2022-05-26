@@ -1,0 +1,2 @@
+BUG: isna not returning copy for MaskedArray (#41020)
+

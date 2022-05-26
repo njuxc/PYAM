@@ -1,0 +1,6 @@
+Fixed isolation of RouterTestCase.test_m2m_cross_database_protection().
+
+Hardcoded pks are necessary for this test case, however we need to set
+them for all new rows because the sequence will not increment
+automatically. It works when the sequence is incremented by other
+test cases.

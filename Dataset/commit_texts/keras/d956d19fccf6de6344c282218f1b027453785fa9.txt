@@ -1,0 +1,1 @@
+Fix inconsistency with to_categorical applied to length 1 list

@@ -1,0 +1,3 @@
+Fixed #20384 -- Forced GeoIP_open path argument to bytestring
+
+Thanks Julian Wachholz for the report.

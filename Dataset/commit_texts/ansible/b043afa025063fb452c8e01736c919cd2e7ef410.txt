@@ -1,0 +1,2 @@
+apt: Fix fail_json API call (#74444)
+

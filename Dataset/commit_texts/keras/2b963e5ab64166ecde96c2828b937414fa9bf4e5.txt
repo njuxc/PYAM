@@ -1,0 +1,6 @@
+[P] Update tensorflow_backend.py (#11294)
+
+From line 1907 - 1918: when call tf.reshape(x, shape), (*before*)shape=(-1) will raise ValueError: Shape must be rank 1 but is rank 0 ...
+I think (-1) in python refers to the Rank-0 shape, though [-1] or (-1,) refers to the Rank-1 shape instead.
+
+It was also strange that it only raised error when 'image_data_format' was set to 'channels_first', not 'channels_last'.

@@ -1,0 +1,5 @@
+ipaddr filter - return a network address when given an address with /32 subnet (#47539)
+
+* fix #17872
+
+* add changelog fragment and enable unit test

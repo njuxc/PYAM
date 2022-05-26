@@ -1,0 +1,19 @@
+Fix an exception when passlib library is used with a wrapped algo (#75527)
+
+* Test a passlib wrapped algo with a password lookup
+
+* Fix error when passlib is used with a wrapped algo
+
+The exception was:
+
+     An unhandled exception occurred while running the lookup plugin 'password'.
+     Error was a <class 'TypeError'>, original message: issubclass() arg 1 must be a class
+
+and can be reproduced using the following command:
+
+    ansible localhost -i localhost, -mdebug -amsg="{{ lookup('password', '/dev/null encrypt=ldap_sha512_crypt') }}"
+
+The concerned algo are: bsd_nthash, django_argon2, django_bcrypt, ldap_bcrypt,
+ldap_bsdi_crypt, ldap_des_crypt, ldap_hex_md5, ldap_hex_sha1, ldap_md5_crypt,
+ldap_pbkdf2_sha1, ldap_pbkdf2_sha256, ldap_pbkdf2_sha512, ldap_sha1_crypt,
+ldap_sha256_crypt, ldap_sha512_crypt, roundup_plaintext

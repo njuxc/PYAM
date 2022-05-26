@@ -1,0 +1,6 @@
+Fixed #18317 -- Removed db specific raw SQL function from tests
+
+A test in model_fields used LEN() in raw SQL. This function is not
+available on some 3rd party backends. I removed this function and
+ensured that the test works correctly (breaks pre e9bbdb39de) with
+the change.

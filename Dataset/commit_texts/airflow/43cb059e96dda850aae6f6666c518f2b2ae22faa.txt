@@ -1,0 +1,2 @@
+Fixes failing formatting of DAG file containing {} in docstring (#9779)
+

@@ -1,0 +1,19 @@
+Don't use global np.random.seed in tests (#13356)
+
+* initial commit
+
+* used random class
+
+* fixed failing testcases, reverted __init__.py
+
+* fixed failing testcases #2
+- passed rng as parameter to ParameterSampler class
+- changed seed from 0 to 42 (as original)
+
+* fixed failing testcases #2
+- passed rng as parameter to SparseRandomProjection class
+
+* fixed failing testcases #4
+- passed rng as parameter to GaussianRandomProjection class
+
+* fixed failing test case because of flake 8

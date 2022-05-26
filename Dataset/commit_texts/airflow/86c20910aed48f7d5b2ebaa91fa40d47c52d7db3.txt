@@ -1,0 +1,5 @@
+Fix ``AttributeError``: ``datetime.timezone`` object has no attribute ``name`` (#16599)
+
+closes: #16551
+
+Previous implementation tried to force / coerce the provided timezone (from the dag's `start_date`) into a `pendulum.tz.timezone.*` that only worked if the provided timezone was already a pendulum's timezone and it specifically failed when with `datetime.timezone.utc` as timezone. 

@@ -1,0 +1,10 @@
+Don't check execution_date in refresh_from_db (#16809)
+
+The native sqlalchemy DateTime type does not compare well when timezones
+don't match. This can happen if the current execution_date on a DagRun
+instance is not in UTC (the db entry is always in UTC).
+
+Since DagRun has a unique constraint on (dag_id, run_id), these two
+should be able to return one unique result, and the executrion_date
+column should not be needed anyway. Let's just remove that filter to
+prevent all the datetime comparison trouble.

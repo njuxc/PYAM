@@ -1,0 +1,5 @@
+Ignored warnings correctly in test_get_formsets_with_inlines_returns_tuples().
+
+The subclass check in ModelAdmin.get_formsets_with_inlines() wasn't
+tested correctly because of the super() call in
+EpisodeAdmin.get_formsets().

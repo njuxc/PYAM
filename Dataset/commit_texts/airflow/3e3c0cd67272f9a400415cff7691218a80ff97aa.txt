@@ -1,0 +1,4 @@
+[AIRFLOW-4883] Bug-fix to killing hung file processes (#5706)
+
+PRs #5615 and #5605 and fought a bit over this change, and this is
+hard (but not impossible) to test so we didn't notice.

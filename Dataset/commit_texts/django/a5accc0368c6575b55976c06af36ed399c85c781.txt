@@ -1,0 +1,3 @@
+Fixed #30318 -- Added check for importability of arguments of custom error handler views.
+
+Thanks to Jon on Stack Overflow for reporting the issue.

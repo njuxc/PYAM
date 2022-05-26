@@ -1,0 +1,4 @@
+TST: avoid a crash in Windows + Anaconda Py3.3
+
+The crash is due to a numpy bug in np.load, that is called by joblib
+caching. We work around it by avoiding the call to np.load

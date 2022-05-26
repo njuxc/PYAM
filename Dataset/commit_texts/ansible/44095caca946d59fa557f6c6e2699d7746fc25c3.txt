@@ -1,0 +1,4 @@
+url_argument_spec: remove deprecated thirsty alias (#75838)
+
+Fixes #75825
+Fixes #75826

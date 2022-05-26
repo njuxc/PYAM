@@ -1,0 +1,4 @@
+Pass exception to ``run_finished_callback`` for Debug Executor (#17983)
+
+When running the Debug Executor, the context inside the `on_failure_callback` method doesn't have the `exception` object.
+This is because the `exception` is not passed to `run_finished_callback` with the Debug Executor

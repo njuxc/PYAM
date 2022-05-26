@@ -1,0 +1,9 @@
+Fix XCom.delete error in Airflow 2.2.0 (#18956)
+
+In Airflow 2.2.0 XCom.delete causes error, by trying to update dag_run table dag_id and execution_date columns to NULLs.
+
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "dag_id" violates not-null constraint
+[SQL: UPDATE dag_run SET dag_id=%(dag_id)s, execution_date=%(execution_date)s WHERE dag_run.id = %(dag_run_id)s]
+[parameters: {'dag_id': None, 'execution_date': None, 'dag_run_id': 2409}]
+
+Setting passive_deletes to the string value ‘all’ will disable the “nulling out”

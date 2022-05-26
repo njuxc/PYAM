@@ -1,0 +1,2 @@
+[AIRFLOW-6400] Fix pytest not working on Windows (#6964)
+

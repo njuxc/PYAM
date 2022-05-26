@@ -1,0 +1,2 @@
+CLN: unnecessary warning-catching (#43919)
+

@@ -1,0 +1,2 @@
+REGR: fix isin for large series with nan and mixed object dtype (causing regression in read_csv) (#37499)
+

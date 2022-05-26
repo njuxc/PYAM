@@ -1,0 +1,2 @@
+Fix TaskNotFound in log endpoint (#13872)
+

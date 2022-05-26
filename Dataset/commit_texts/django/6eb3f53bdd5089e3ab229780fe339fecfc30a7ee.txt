@@ -1,0 +1,1 @@
+Fixed #32047 -- Fixed call_command() crash if a constant option from required mutually exclusive group is passed in options.

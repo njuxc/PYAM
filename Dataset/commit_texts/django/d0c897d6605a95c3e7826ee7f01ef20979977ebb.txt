@@ -1,0 +1,4 @@
+Made a set of small test changes to avoid leaving temp files hanging around after running the test suite. First, fixed a couple of places where temp dirs were (or could be) created without later being deleted. Second, added a missing close() before unlink() since Windows raises an error on an attempt to remove an open file.  Finally, in the file_uploads tests, avoided opening-by-name temporary files that we already have a descriptor for.  Doing additional opens seems to run afoul of the Windows issue with deleting open files, so it generally works better to just seek back to 0 instead of calling open multiple times. 
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@10406 bcc190cf-cafb-0310-a4f2-bffc1f526a37

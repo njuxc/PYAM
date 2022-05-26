@@ -1,0 +1,7 @@
+CLI: Fail ``backfill`` command before loading DAGs if missing args (#18994)
+
+I was looking through some of the CLI code last week trying to improve the speed of `airflow user` commands and I noticed this small issue. 
+
+If neither the `start_date` or `end_date` argument is provided then the command will fail, but it will first parse all of the DAGs which can take up to several minutes in large deployments. 
+
+Now the command will fail faster, allowing the user to adjust their command and retry. 

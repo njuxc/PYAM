@@ -1,0 +1,3 @@
+Cast constants in optimizer as floatx.
+
+The constants here are stored as float32 by default and break graph compilation for float16. The fix is to simply "cast_to_floatx()" on the constants.  Tensorflow automatically does this so I'm not sure why keras has this issue.

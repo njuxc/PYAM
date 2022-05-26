@@ -1,0 +1,3 @@
+Fix sphinx add_stylesheet deprecation warning (#8627)
+
+See https://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_css_file for more information.

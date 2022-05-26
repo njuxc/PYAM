@@ -1,0 +1,2 @@
+PERF: use arr.size instead of np.prod(arr.shape) in _can_use_numexpr (#39825)
+

@@ -1,0 +1,4 @@
+Sort adopted tasks in _check_for_stalled_adopted_tasks method (#18208)
+
+This PR adds sorting in adopted_tasks_timeout to ensure we correctly
+clear stalled adopted tasks

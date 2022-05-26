@@ -1,0 +1,1 @@
+Fixed #21015 -- Fixed MigrationLoader when importlib.import_module returns a file module or an empty directory.

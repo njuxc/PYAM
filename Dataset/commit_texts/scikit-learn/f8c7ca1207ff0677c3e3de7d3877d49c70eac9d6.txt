@@ -1,0 +1,4 @@
+FIX classification_report shouldn't fail on unicode labels in Python 2.x
+
+'{0}'.format(arg) doesn't promote the whole string to unicode if arg is unicode - it tries to encode arg to sys.getdefaultencoding() instead.
+"%s" doesn't have this gotcha.

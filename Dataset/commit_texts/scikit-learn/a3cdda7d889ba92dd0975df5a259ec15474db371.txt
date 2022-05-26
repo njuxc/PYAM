@@ -1,0 +1,8 @@
+Fix bug in sparse k-NN and add disabled (!) test for sparse regression
+
+Sparse regression doesn't work, but the test is there for the brave soul
+that wants to implement it.
+
+The bug caused Numpy dense matrices to be returned instead of arrays.
+This didn't hurt the test or the doc. class. example, but it contradicts
+the docstring.

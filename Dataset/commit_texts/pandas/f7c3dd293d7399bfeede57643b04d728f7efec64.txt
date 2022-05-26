@@ -1,0 +1,2 @@
+API: require timezone match in DatetimeArray.shift (#37299)
+

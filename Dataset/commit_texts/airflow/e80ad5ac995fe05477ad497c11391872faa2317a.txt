@@ -1,0 +1,14 @@
+Correctly capture debug logs in plugin tests. (#14058)
+
+This fixes the test test_should_load_plugins_from_property, which is currently quarantined as a "Heisentest".
+
+Current behavior:
+The test currently fails because the records that it expects to find in the logger are not present.
+
+Cause:
+While the test sets the logger as "DEBUG", it doesn't specify which logger to update. Python loggers are namespaced (typically based on the current file's path), but this has to be defined explicitly. In the absence of a specified logger, any attempts to lookup will return the BaseLogger instance.
+
+The test is therefore updating the log level for the base logger, but when the test runs, the plugins_manager.py file defines a namespaced logger log = logging.getLogger(__name__) used throughout the file. Since a different logger is used, the original log level, in this case INFO, is used. INFO is a higher level than DEBUG, so the calls to log.debug() get filtered out, and when the test looks for log records it finds an empty list.
+
+Fix:
+Just specify which logger to update when modifying the log level in the test.

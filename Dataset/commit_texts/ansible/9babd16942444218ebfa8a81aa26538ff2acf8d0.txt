@@ -1,0 +1,11 @@
+k8s handle absent resources when waiting (#51682)
+
+* k8s wait - don't try to call to_dict on None
+
+Need to ensure that the resource dict is correctly returned for absent
+resources
+
+* Cope with resources without a namespace
+
+Some resources (e.g. ClusterRoleBinding) do not have a Namespace.
+Handle the lack of a namespace key.

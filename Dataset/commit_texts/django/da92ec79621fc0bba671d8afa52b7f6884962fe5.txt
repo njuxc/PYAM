@@ -1,0 +1,2 @@
+Fixed #29759 -- Fixed crash on Oracle when fetching a returned insert id with cx_Oracle 7.
+

@@ -1,0 +1,5 @@
+Fixed #18407 -- Made model field's to_python methods fully accept unicode.
+
+When generating error message in to_python, any unicode string
+containing non-ascii characters triggered a UnicodeEncodeError for
+most field types.

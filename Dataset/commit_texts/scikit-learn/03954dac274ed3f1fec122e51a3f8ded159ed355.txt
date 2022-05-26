@@ -1,0 +1,13 @@
+Rename of SVM classes.
+
+Separate different types of support vectors in different classes.
+
+See issue 29 [1] for a complete discussion of the API
+
+Also, add benchmarks for this module.
+
+[1] https://sourceforge.net/apps/trac/scikit-learn/ticket/29
+
+From: Fabian Pedregosa <fabian.pedregosa@inria.fr>
+
+git-svn-id: https://scikit-learn.svn.sourceforge.net/svnroot/scikit-learn/trunk@509 22fbfee3-77ab-4535-9bad-27d1bd3bc7d8

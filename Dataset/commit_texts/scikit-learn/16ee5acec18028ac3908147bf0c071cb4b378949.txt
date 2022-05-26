@@ -1,0 +1,2 @@
+TST Fixed assert statements, now using assert_array_equal function (#15428)
+

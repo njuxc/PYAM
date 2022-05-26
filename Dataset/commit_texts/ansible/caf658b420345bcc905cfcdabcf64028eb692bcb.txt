@@ -1,0 +1,8 @@
+Fix bugs in softlayer dynamic inventory (#28178)
+
+* --host hostname did not work due to calling wrong function
+
+* softlayer api returns a bunch of extra stuff in the tagReference dict that
+  makes --list output crazy long, like over a terminal buffer for just one server
+  this culls out the extranneous information and only inserts the actual user
+  provided tags to each server.

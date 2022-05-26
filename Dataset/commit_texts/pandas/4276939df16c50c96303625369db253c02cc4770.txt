@@ -1,0 +1,2 @@
+BUG: pd.array preserve PandasArray (#43887)
+

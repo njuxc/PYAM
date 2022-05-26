@@ -1,0 +1,3 @@
+Update SiameseHead
+
+We forgot to pass the train parameter to the layer.__call__ inside get_output_at. This is a bug.

@@ -1,0 +1,9 @@
+Fixed long delays in the Temporal trigger (#17564)
+
+This trigger was never actually working for delays over two hours, as it
+was comparing a Pendulum.Period to a datetime.datetime, in a way that
+always returned True.
+
+This commit fixes the behaviour. This unfortunately seems un-testable,
+as it's not possible to interrupt asyncio's sleep() while it's
+in-flight.

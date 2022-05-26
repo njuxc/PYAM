@@ -1,0 +1,6 @@
+Fixed #20889 -- Prevented email.Header from inserting newlines
+
+Passed large maxlinelen to email.Header to prevent newlines from being
+inserted into value returned by _convert_to_charset
+
+Thanks mjl at laubach.at for the report.

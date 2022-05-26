@@ -1,0 +1,5 @@
+Fixed #14951 -- Made the unique_for_{date,month,year} model field constraints to not fail when the related DateField is empty.
+
+Existing modelforms tests were extended to cover this case and an equivalent set of tests was added for the model functionality.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@15167 bcc190cf-cafb-0310-a4f2-bffc1f526a37

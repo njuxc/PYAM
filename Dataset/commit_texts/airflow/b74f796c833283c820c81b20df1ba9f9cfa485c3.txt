@@ -1,0 +1,6 @@
+Fix deprecated warning hvac auth (#15216)
+
+Fixes the following Hashicorp Vault (hvac) approle auth deprecation warning:
+```
+DeprecationWarning: Call to deprecated function 'auth_approle'. This method will be removed in version '0.12.0' Please use the 'login' method on the 'hvac.api.auth_methods.approle' class moving forward.
+```

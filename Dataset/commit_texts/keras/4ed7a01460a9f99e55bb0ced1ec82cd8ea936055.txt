@@ -1,0 +1,5 @@
+Fixing RNN compute_dtype in v1.
+
+In v1, since there isn't a global policy, the layer compute_dtype will be "_inferred" from input, and the inferred dtype are actually populate on the cell.
+
+PiperOrigin-RevId: 394779149

@@ -1,0 +1,11 @@
+Add conditional version retrieval from setup. (#12853)
+
+When airflow is not installed as package (for example for local
+development from sources) there is no package metadata.
+
+Many of our unit tests use the version field and they fail if they
+are run within virtual environment where airflow is not installed
+as package (for example in IntelliJ this is default setting.
+
+This PR adds fall-back to read airflow version from setup in
+case it cannot be read from package metadata.

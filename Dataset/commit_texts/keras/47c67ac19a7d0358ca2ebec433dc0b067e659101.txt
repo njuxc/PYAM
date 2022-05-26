@@ -1,0 +1,1 @@
+T.mean() on int tensors returns float64; use _FLOATX instead

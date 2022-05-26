@@ -1,0 +1,3 @@
+Fix edge cases with class name conversion to snake case.
+
+PiperOrigin-RevId: 383939498

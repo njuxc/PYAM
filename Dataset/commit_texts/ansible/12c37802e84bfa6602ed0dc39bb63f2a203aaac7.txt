@@ -1,0 +1,14 @@
+rabbitmq_binding: Fix using empty routing key (#48597)
+
+* rabbitmq_binding: Fix using empty routing key
+
+If the routing key is an empty string we need to use the special props
+value ~ in the URL. Otherwise the last part of the URL will be empty,
+which will instead be equivalent to the "list all bindings" API call
+which always returns 200 OK (as long as the exchange and queue exists).
+
+* rabbitmq_binding: Move routing_key test outside format
+
+Test the routing_key value and set the props value outside the format
+call. We leave the original routing_key untouched since its original
+value is later needed in create().

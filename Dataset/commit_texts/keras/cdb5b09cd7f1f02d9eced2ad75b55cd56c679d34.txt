@@ -1,0 +1,9 @@
+fix: Sort subdirs before mapping them to classes. (#3052)
+
+The documentation says that [1]: 
+
+> If [classes are] not provided, the list of classes will be automatically inferred (and the order of the classes, which will map to the label indices, will be alphanumeric).
+
+However, the code was adding classes in the order `os.listdir` returned them. This commit alphanumerically sorts the sub-directories before mapping them to label indices.
+
+[1] http://keras.io/preprocessing/image/

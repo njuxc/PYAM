@@ -1,0 +1,5 @@
+Close file descriptor of temporary file after building certificate chain (#71825)
+
+* Close file descriptor of temporary file after building certificate chain.
+
+* Add changelog fragment for PR71825

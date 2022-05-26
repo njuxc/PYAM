@@ -1,0 +1,2 @@
+REGR: close corrupt files in ExcelFile (#41806)
+

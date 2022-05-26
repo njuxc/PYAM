@@ -1,0 +1,2 @@
+Add attribute check before using isatty() (#8395)
+

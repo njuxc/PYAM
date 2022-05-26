@@ -1,0 +1,5 @@
+Fix AIX networks facts when nestat is either missing or has incorrect permissions (#72516)
+
+* Added check for none on netstat_path variable
+
+* Added changelog

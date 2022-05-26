@@ -1,0 +1,2 @@
+BUG: groupby.apply incorrectly dropping nan (#43236)
+

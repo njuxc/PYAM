@@ -1,0 +1,2 @@
+Fix Deprecation for configuration.getsection (#13804)
+

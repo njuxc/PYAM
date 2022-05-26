@@ -1,0 +1,7 @@
+lookup: redis: fix plugin returning repr'd byte objects (#52854)
+
+* Fix default port of redis lookup plugin
+
+* Fix redis plugin returning repr'd byte objects
+
+* Fix error handling in redis lookup plugin

@@ -1,0 +1,3 @@
+HDF5Matrix can handle np.int64 indexing (#7686)
+
+Right now HDF5Matrix's raise an index error when a np.int64 number is used to index them (such as from np.arange). In contrast normal numpy array can handle this situation. This PR fixes that by also checking for numpy integer types.

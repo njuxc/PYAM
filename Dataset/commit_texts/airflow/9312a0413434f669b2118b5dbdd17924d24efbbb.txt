@@ -1,0 +1,6 @@
+Remove duplicated log line from `db upgrade` (#9305)
+
+Fixes these logs -- we only want one of them
+
+    [2020-06-15 12:19:38,673]  3613796 {{airflow.utils.db db.py:610}} INFO - Creating tables
+    [2020-06-15 12:19:38,673]  3613796 {{airflow.utils.db db.py:565}} INFO - Creating tables

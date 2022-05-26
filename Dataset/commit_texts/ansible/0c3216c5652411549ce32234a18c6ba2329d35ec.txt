@@ -1,0 +1,5 @@
+win_reboot: fix minor issues with the latest refactor (#44740)
+
+* win_reboot: fix minor issues with the latest refactor
+
+* Always return elapsed with win_reboot

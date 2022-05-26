@@ -1,0 +1,2 @@
+Tst return none inplace series (#35210)
+

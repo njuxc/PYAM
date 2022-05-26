@@ -1,0 +1,4 @@
+Fixed #11969 -- `Field.post_create_sql` hook should not be called for unmanaged models.  Thanks, jtiai for report.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12313 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,5 @@
+BUG test_oneclass_decision_function: fix RNG
+
+Never oh never use an unprotected random number generator
+
+Fixes #765

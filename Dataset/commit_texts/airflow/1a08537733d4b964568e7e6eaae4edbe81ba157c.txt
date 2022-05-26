@@ -1,0 +1,5 @@
+[AIRFLOW-2106] SalesForce hook sandbox option
+
+Cannot pass sandbox argument to sales_force hook preventing sandbox connection.
+
+Closes #3111 from feng-tao/airflow-2106

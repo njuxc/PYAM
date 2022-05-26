@@ -1,0 +1,18 @@
+Correct pkg_mgr for Fedora-derived OSTree distros (#73445)
+
+Change:
+- Remove check that states that only Fedora can be an OSTree
+  distribution.
+- This allows us to correctly return "atomic_container" as the pkg_mgr
+  fact for RHEL for Edge, Fedora/RHEL/CentOS Atomic Host, etc.
+
+Test Plan:
+- Created local RHEL for Edge image and tested against it.
+- Tested against regular RHEL 8 and still got `dnf` as expected.
+- Tested against RHEL 7 Atomic Host and got `atomic_container` now.
+- New unit tests.
+
+Tickets:
+- Fixes #73084
+
+Signed-off-by: Rick Elrod <rick@elrod.me>

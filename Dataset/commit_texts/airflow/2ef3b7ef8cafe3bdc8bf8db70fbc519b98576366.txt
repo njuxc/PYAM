@@ -1,0 +1,2 @@
+Fix ERROR - Object of type 'bytes' is not JSON serializable when using store_to_xcom_key parameter (#12172)
+

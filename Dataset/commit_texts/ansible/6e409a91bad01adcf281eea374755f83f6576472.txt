@@ -1,0 +1,12 @@
+Correct usage of sorted() in mongodb_user (#46792)
+
+* Correct usage of sorted() in mongodb_user
+
+sorted() can't be called on a list of dicts
+without supplying a key parameter. This is
+explained really well in the Sorting HOWTO
+https://docs.python.org/3.6/howto/sorting.html#key-functions
+
+This commit fixes #46791
+
+* Fix PEP8 issues

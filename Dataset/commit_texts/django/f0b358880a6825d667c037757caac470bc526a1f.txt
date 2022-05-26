@@ -1,0 +1,6 @@
+Fixed #23259 -- Corrected insertion order of extra() select_params
+
+A regression caused queries to produce incorrect results for cases where
+extra(select) is excluded by values() but included by extra(order_by)
+
+The regression was caused by 2f35c6f10fcbae541691207fb0c0560a13b754fc.

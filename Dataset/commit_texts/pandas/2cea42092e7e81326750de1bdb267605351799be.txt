@@ -1,0 +1,2 @@
+Fix frame_or_series.asfreq() dropping rows on unordered indices (#40384)
+

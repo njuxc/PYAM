@@ -1,0 +1,14 @@
+BUG: addresses #14855 by fixing color kwarg conflict
+
+ - [x] closes #14855    - [x] tests passed   - [x] passes ``git diff
+upstream/master | flake8 --diff``
+
+Author: alexandercbooth <alexander.c.booth@gmail.com>
+
+This patch had conflicts when merged, resolved by
+Committer: Tom Augspurger <tom.w.augspurger@gmail.com>
+
+Closes #14871 from alexandercbooth/fix-color-scatterm-bug and squashes the following commits:
+
+3245f09b9 [alexandercbooth] DOC: moving whatsnew entry to 0.20.0
+8ff5f51f1 [alexandercbooth] BUG: addresses #14855 by fixing color kwarg conflict

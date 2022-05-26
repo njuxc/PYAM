@@ -1,0 +1,5 @@
+GitPython==3.1.27
+nltk==3.6.2
+PyGithub==1.55
+rake_nltk==1.0.6
+tqdm==4.62.3

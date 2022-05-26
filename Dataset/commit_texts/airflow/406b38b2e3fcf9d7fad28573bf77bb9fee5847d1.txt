@@ -1,0 +1,2 @@
+Replace default api_version of FacebookAdsReportToGcsOperator (#18996)
+

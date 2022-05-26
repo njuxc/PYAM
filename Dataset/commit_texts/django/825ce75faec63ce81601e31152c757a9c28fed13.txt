@@ -1,0 +1,10 @@
+Fixed #31928 -- Fixed detecting an async get_response in various middlewares.
+
+SecurityMiddleware and the three cache middlewares were not calling
+super().__init__() during their initialization or calling the required
+MiddlewareMixin._async_check() method.
+
+This made the middlewares not properly present as coroutine and
+confused the middleware chain when used in a fully async context.
+
+Thanks Kordian Kowalski for the report.

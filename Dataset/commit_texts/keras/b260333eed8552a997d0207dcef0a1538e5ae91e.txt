@@ -1,0 +1,2 @@
+Bug fix: ocr example; python 3 (#6060)
+

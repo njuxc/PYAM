@@ -1,0 +1,5 @@
+Don't set child tasks to schedulable in test runs (#12595)
+
+Fixes a bug where Airflow will attempt to set child tasks to schedulable
+for test tasks when users run `airflow task test.` This causes an error
+as Airflow runs a DB seek for a task that has not been recorded.

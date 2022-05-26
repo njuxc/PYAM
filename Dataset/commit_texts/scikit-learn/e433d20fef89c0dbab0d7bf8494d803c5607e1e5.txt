@@ -1,0 +1,10 @@
+FIX use float64 in metrics.r2_score() to prevent overflow
+
+Without this, if the input arrays are of type np.float32, their sums
+may be computed with an large accumulated error, resulting in the wrong
+scor with very long arrays (millions of elements).
+
+The "1 - numerator / denominator" calculation at the very end produces
+a float64 anyway, so the returned type does not change--only the accuracy.
+
+Fixes #2158.

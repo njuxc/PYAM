@@ -1,0 +1,5 @@
+Fixed #32611 -- Prevented unecessary setup()/teardown() calls when using --bisect/--pair runtests options.
+
+This commit changes runtests.py's bisect_tests() and paired_tests() to
+change settings only when necessary, namely when specific test names
+aren't provided.

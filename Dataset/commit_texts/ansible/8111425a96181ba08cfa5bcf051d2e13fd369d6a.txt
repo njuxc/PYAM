@@ -1,0 +1,13 @@
+Cloudscale server password (#53701)
+
+* cloudscale_server: remove required parameter check
+
+The valid parameter combinations are already checked by the API. There
+is no need to check a subset of this in the Ansible module as well. This
+makes it more likely that future changes in the API won't require
+changes in the Ansible module.
+
+* cloudscale_server: add password parameter
+
+Recent revisions of the cloudscale.ch API allow setting a password for a
+server. Add this option to the cloudscale_server module.

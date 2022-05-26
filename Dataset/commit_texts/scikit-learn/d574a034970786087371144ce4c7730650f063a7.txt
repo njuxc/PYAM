@@ -1,0 +1,2 @@
+type checking before comparison, to avoid warning messages
+If np.array is pssed  as a parameter 'n_values', warning of multiple comparison is printed. This patch avoid this problem.

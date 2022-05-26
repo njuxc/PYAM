@@ -1,0 +1,3 @@
+Fixed task instance retrieval in XCom view (#16923)
+
+The SQL logical "and" was not implemented correctly and hence the filter was returning wrong results

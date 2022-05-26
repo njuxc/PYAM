@@ -1,0 +1,4 @@
+Fixed GenericRelationTests.test_annotate when primary key values are large.
+
+On CockroachDB, primary key values stored in this fields are larger
+than they accept.

@@ -1,0 +1,3 @@
+Remove deprecated warn kwarg for matplotlib use (#35323)
+
+The warn param has been deprecated in 3.2.1: https://matplotlib.org/3.2.1/api/prev_api_changes/api_changes_3.2.0.html#matplotlib-use

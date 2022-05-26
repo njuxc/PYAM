@@ -1,0 +1,5 @@
+vultr: fix for API returned unexpected empty list (#48036)
+
+* vultr: fix for API returned unexpected empty list
+
+* add changelog

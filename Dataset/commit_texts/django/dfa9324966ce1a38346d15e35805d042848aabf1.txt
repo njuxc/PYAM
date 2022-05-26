@@ -1,0 +1,9 @@
+Don't use os.system() in compilemessages.
+
+Fixes #19584.
+
+This implies stop storing file path command line arguments in envvars as
+a security measure to start relying on with Popen's shell=False instead,
+and addition of an 'utils' module.
+
+Thanks kmichel_wgs for the report.

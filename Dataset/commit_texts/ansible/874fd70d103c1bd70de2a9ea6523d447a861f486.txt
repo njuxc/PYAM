@@ -1,0 +1,17 @@
+httpapi/nxos_facts: raise ConnectionError is missing `code` (#53406)
+
+* `nxos_facts` crashes with certain nxos images; e.g. `7.0(3)I7(3)` as a result of this call:
+  ```
+        data = self.run('show lldp neighbors', output='json')
+  ```
+  ...which returns `ERROR: No neighbour information` when the device has no neighbors.
+
+* This response causes httpapi's `handle_reponse()` to raise a ConnectionError, which is caught by `utils/jsonrpc.py` which is expecting `code` in the exception data:
+
+  ```
+             except ConnectionError as exc:
+                 display.vvv(traceback.format_exc())
+                 error = self.error(code=exc.code, message=to_text(exc))
+  ```
+
+* Found by: `nxos_facts/tests/common/not_hardware.yaml:7`

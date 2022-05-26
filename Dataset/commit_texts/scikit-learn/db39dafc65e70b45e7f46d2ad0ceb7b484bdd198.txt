@@ -1,0 +1,2 @@
+[MRG+1] classification_report: raise error if labels is None and target_names size is not equal to present classes (#9867)
+

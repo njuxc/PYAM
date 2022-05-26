@@ -1,0 +1,2 @@
+Don't show params when there is an issue with `set_option(s)` (#75805)
+

@@ -1,0 +1,8 @@
+[AIRFLOW-1613] make mysql_to_gcs_operator py3 compatible
+
+Uses `__future__.unicode_literals` and replaces calling `json.dumps`
+with `json.dump` followed by `tmp_file_handle.write` to write json lines
+to the ndjson file. When using python3, `json.dump` will return a
+unicode string instead of a byte string, therefore we encode the unicode
+string to `utf-8` which is compatible with bigquery (see:
+https://cloud.google.com/bigquery/docs/loading-data#loading_encoded_data).

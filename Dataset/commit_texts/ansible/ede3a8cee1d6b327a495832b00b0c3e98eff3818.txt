@@ -1,0 +1,4 @@
+Fix formatting for the error on azure_rm_appserviceplan_facts (#45613)
+
+Since there is only 1 argument, {1} can't work since that's the
+2nd argument for format. Flagged by lgmt.com

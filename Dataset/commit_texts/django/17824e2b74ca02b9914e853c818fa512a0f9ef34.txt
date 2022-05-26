@@ -1,0 +1,6 @@
+Fixed #17736 -- Kept maximal floating-point accuracy in from_bbox
+
+When constructing a polygon with Polygon.from_bbox, do not convert
+parameters to strings at this stage (str defaults to 12 significant
+digits).
+Thanks tdihp@hotmail.com for the report and David Eklung for the patch.

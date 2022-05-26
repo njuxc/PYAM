@@ -1,0 +1,4 @@
+Fixed #21821 -- db_type argument for field_cast_sql
+
+The db_type argument for connection.ops.field_cast_sql wasn't correctly
+set after merge of custom lookups patch.

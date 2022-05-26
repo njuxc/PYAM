@@ -1,0 +1,7 @@
+Handle timetable exception in ``DAG.next_dagrun_info`` (#18729)
+
+For now, the exception is simply logged and the DAG not being scheduled.
+
+Currently, an incorrectly implemented timetable may crash the scheduler process entirely due to uncaught exceptions. This PR adds exception handlers around those calls. A failed infer_manual_data_interval() will cause the manual DAG run being skipped, and a failed next_dagrun_info() will cause the DAG run to not happen, and the DAG not being scheduled anymore (because None is set on DagModel.next_dagrun) until the DAG file is modified.
+
+For now, the exception is simply logged. In the future we'll add a new db model similar to ImportError and hold these errors and display them on the web UI. This new model class will also be designed to incorporate ImportError eventually.

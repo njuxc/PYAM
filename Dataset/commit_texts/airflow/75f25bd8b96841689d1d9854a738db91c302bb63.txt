@@ -1,0 +1,6 @@
+Fix and Unquarantine test_change_state_for_tis_without_dagrun (#12323)
+
+
+
+The test was simply wrong and failed since the new logic was added in
+https://github.com/apache/airflow/commit/c9a97baa86762b9ba37ef71432573b7949e47e2b

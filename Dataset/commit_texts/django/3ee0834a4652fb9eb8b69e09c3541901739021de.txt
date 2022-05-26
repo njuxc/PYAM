@@ -1,0 +1,4 @@
+Fixed #30556 -- Avoided useless query and hasher call in ModelBackend.authenticate() when credentials aren't provided.
+
+There's no need to fetch a user instance from the database unless
+a username and a password are provided as credentials.

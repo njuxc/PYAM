@@ -1,0 +1,6 @@
+Fix changing the parent dag state on subdag clear (#15562)
+
+Closes: https://github.com/apache/airflow/issues/15374
+This pull request follows https://github.com/apache/airflow/pull/14776. 
+
+Clearing a subdag with Downstream+Recursive does not automatically set the state of the parent dag so that the downstream parent tasks can execute.

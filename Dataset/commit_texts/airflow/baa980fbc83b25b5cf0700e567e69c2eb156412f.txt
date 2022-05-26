@@ -1,0 +1,12 @@
+When sending tasks to celery from a sub-process, reset signal handlers (#11278)
+
+Since these processes are spawned from SchedulerJob after it has
+registered it's signals, if any of them got signaled they would have the
+behaviour of killing the ProcessorAgent process group! (MP has a default
+spawn of fork on Linux, so they inherit all previous state -- signals,
+and access to the `_process.pid` inside the ProcessorAgent instance)
+
+This behaviour is not what we want for these multiprocess.Pool processes.
+
+This _may_ be a source of the long-standing "scheduler is alive but not
+scheduling any jobs. Maybe.

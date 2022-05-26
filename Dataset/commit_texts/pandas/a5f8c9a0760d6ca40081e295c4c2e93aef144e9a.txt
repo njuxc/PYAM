@@ -1,0 +1,2 @@
+TST: Catch warnings due to division by 0 (#42836)
+

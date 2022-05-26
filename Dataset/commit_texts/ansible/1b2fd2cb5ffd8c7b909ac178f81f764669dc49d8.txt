@@ -1,0 +1,8 @@
+rabbitmq_publish fix for incorrectly stating message was not published to the queue (#61960)
+
+* Pika v1.0.0 and above were causing issues for publish_message.  Updated
+to ensure publish_message works with pika 0.13.1 and 1.0.0 and above.
+
+* Adding changelog fragment for rabbitmq_publish fix.
+
+* Updating return value.

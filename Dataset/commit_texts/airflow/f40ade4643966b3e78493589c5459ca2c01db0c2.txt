@@ -1,0 +1,7 @@
+When a task instance fails with exception, log it (#16805)
+
+The previous .exception() call looks at sys.exc_info() for the active
+exception, but since the failure handler is not in a Python exception
+handling context, it fails to actually log the exception. This is
+amended by passing in the exception instance explicitly, which is a
+valid argument type according to logging's documentation.

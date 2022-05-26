@@ -1,0 +1,3 @@
+Fixed #29155 -- Fixed crash when database functions are used with pattern lookups.
+
+Thanks Tim Graham and Sergey Fedoseev for reviews.

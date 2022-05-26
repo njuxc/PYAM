@@ -1,0 +1,3 @@
+Fixed #17358 -- Updated logging calls to use official syntax for arguments instead of string interpolation. Thanks, spulec.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@17480 bcc190cf-cafb-0310-a4f2-bffc1f526a37

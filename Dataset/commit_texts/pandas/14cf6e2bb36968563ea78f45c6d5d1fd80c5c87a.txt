@@ -1,0 +1,2 @@
+BUG:Can't calculate quantiles from Int64Dtype Series when results are floats (#42936)
+

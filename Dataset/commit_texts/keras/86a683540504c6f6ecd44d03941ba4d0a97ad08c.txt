@@ -1,0 +1,5 @@
+Fix Dense layer bias_add bug when ndim > 2. (#10562)
+
+* Fix Dense layer bias_add bug when ndim > 2.
+
+* Address comment

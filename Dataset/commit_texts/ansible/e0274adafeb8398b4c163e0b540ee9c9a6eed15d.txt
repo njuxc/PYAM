@@ -1,0 +1,10 @@
+Filter DNSimple request by record name. (#49981)
+
+* Filter DNSimple request by record name.
+
+The request was not filtered and DNSimple returns only the first 100
+records so if the number of records is larger the check could fail.
+
+This patch fixes the issue and also makes the check to perform better.
+
+* Add changelog fragment.

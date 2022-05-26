@@ -1,0 +1,3 @@
+Fixed #23403 -- Fixed crash in contrib.sitemaps if lastmod returned a date rather than datetime.
+
+Thanks igorcc for the report.

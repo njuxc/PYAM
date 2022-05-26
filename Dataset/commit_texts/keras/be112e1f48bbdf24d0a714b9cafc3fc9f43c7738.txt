@@ -1,0 +1,2 @@
+Fix image_ocr.py example ValueError (#9869)
+

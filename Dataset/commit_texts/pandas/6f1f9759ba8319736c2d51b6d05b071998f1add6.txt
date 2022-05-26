@@ -1,0 +1,2 @@
+BUG: DecimalArray and JSONArray that are empty return incorrect results for isna() (#21190)
+

@@ -1,0 +1,12 @@
+`func.sum` may returns `Decimal`  that break rest APIs (#15585)
+
+`sqlalchemy.func.sum` has a known *"issue"* that it **may** returns `Decimal` value (_in my case MySQL 5.7_).
+
+This will cause problem when calling [rest APIs](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html#tag/Pool). E.g.
+```http
+GET /airflow/api/v1/pools?limit=100
+
+...
+TypeError: Object of type 'Decimal' is not JSON serializable
+```
+

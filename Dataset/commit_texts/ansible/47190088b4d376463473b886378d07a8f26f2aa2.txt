@@ -1,0 +1,7 @@
+module_utils/mysql: Fixing unexpected keyword argument 'cursorclass' error after migratio… (#47809)
+
+* Fixing unexpected keyword argument 'cursorclass' error after migration from MySQLdb to PyMySQL
+
+* Adoptions for mysql.py as suggested by felixfontein.
+
+* Adding changelog fragment.

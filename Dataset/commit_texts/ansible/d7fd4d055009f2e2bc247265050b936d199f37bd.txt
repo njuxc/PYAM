@@ -1,0 +1,7 @@
+docker_*: always use client.fail() over module.fail_json(), allow to always return data on failure (#51999)
+
+* Always use client.fail() instead of module.fail_json().
+
+* Allow to pass on results on module failure.
+
+* Linting.

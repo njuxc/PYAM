@@ -1,0 +1,9 @@
+[AIRFLOW-3139] include parameters into log.info in SQL operators, if any (#3986)
+
+For all SQL-operators based on DbApiHook, sql command itself is printed
+into log.info. But if parameters are used for the sql command, the
+parameters would not be included in the printing. This makes the log
+less useful.
+
+This commit ensures that the parameters are also printed into the
+log.info, if any.

@@ -1,0 +1,4 @@
+Fixed #11149 -- Don't call save_form_data on file-type fields multiple times when saving a model form.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@10826 bcc190cf-cafb-0310-a4f2-bffc1f526a37

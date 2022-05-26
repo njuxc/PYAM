@@ -1,0 +1,5 @@
+[AIRFLOW-5622] Improve creating directories in SFTPHook (#6287)
+
+* [AIRFLOW-XXX] Improve creating directories in SFTPHook
+
+* fixup! [AIRFLOW-XXX] Improve creating directories in SFTPHook

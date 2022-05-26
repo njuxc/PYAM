@@ -1,0 +1,9 @@
+Made Query.clear_ordering force_empty arg mandatory
+
+Previously it was possible to call clear_ordering without the
+force_empty argument. The result was that the query was still ordered
+by model's meta ordering if that was defined. By making the arg
+mandatory it will be easier to spot possible errors caused by assuming
+clear_ordering will remove all ordering.
+
+Thanks to Dylan Klomparens for the suggestion. Refs #19720.

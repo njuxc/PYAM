@@ -1,0 +1,3 @@
+[py3] Removed unnecessary calls to .keys()
+
+when computing the length of a dictionary. This fails on Python 3.

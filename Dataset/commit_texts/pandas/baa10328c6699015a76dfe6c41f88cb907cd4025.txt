@@ -1,0 +1,2 @@
+BUG: Fix regression in is_list_like (#43373)
+

@@ -1,0 +1,3 @@
+Ensued that SQL indexes are alwasy created in the same name.
+
+Previous this used Python's builtin hash() function, which has never been guarnteed to be stable across implementations (CPython/Jython/etc.) or 32/64 bitness. However, this in practice it was stable. However, with the impending release of Python 3.3 hash randomizations is enabled by default, which would mean the index name changed between program invocations.

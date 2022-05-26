@@ -1,0 +1,4 @@
+Fix tests on numpy master (#8355)
+
+numpy.apply_along_axis has changed behaviour when the function passed
+in returns a 2d array

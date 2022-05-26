@@ -1,0 +1,87 @@
+# (c) 2018, Matt Davis <mdavis@ansible.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+from __future__ import (absolute_import, division, print_function)
+__metaclass__ = type
+
+from datetime import datetime
+
+from ansible.errors import AnsibleError
+from ansible.plugins.action import ActionBase
+from ansible.module_utils._text import to_native
+from ansible.plugins.action.reboot import ActionModule as RebootActionModule
+
+try:
+    from __main__ import display
+except ImportError:
+    from ansible.utils.display import Display
+    display = Display()
+
+
+class TimedOutException(Exception):
+    pass
+
+
+class ActionModule(RebootActionModule, ActionBase):
+    TRANSFERS_FILES = False
+
+    DEFAULT_CONNECT_TIMEOUT = 5
+    DEFAULT_PRE_REBOOT_DELAY = 2
+    DEFAULT_BOOT_TIME_COMMAND = "(Get-WmiObject -ClassName Win32_OperatingSystem).LastBootUpTime"
+    DEFAULT_SHUTDOWN_COMMAND_ARGS = '/r /t %d /c "%s"'
+    DEFAULT_SUDOABLE = False
+
+    DEPRECATED_ARGS = {
+        'shutdown_timeout': '2.5',
+        'shutdown_timeout_sec': '2.5',
+    }
+
+    def construct_command(self):
+        shutdown_command = self.DEFAULT_SHUTDOWN_COMMAND
+        pre_reboot_delay = int(self._task.args.get('pre_reboot_delay', self._task.args.get('pre_reboot_delay_sec', self.DEFAULT_PRE_REBOOT_DELAY)))
+        msg = self._task.args.get('msg', self.DEFAULT_REBOOT_MESSAGE)
+        shutdown_command_args = self.DEFAULT_SHUTDOWN_COMMAND_ARGS % (pre_reboot_delay, msg)
+
+        reboot_command = '%s %s' % (shutdown_command, shutdown_command_args)
+        return reboot_command
+
+    def perform_reboot(self):
+        display.debug("Rebooting server")
+
+        remote_command = self.construct_command()
+        reboot_result = self._low_level_execute_command(remote_command, sudoable=self.DEFAULT_SUDOABLE)
+
+        pre_reboot_delay = int(self._task.args.get('pre_reboot_delay', self._task.args.get('pre_reboot_delay_sec', self.DEFAULT_PRE_REBOOT_DELAY)))
+
+        # Test for "A system shutdown has already been scheduled. (1190)" and handle it gracefully
+        if reboot_result['rc'] == 1190 or (reboot_result['rc'] != 0 and b"(1190)" in reboot_result['stderr']):
+            display.warning('A scheduled reboot was pre-empted by Ansible.')
+
+            # Try to abort (this may fail if it was already aborted)
+            result1 = self._low_level_execute_command('shutdown /a', sudoable=self.DEFAULT_SUDOABLE)
+            # (reboot_result['rc'], stdout1, stderr1) = self._connection.exec_command('shutdown /a')
+
+            # Initiate reboot again
+            result2 = self._connection.exec_command('shutdown /r /t %d' % pre_reboot_delay)
+            # (reboot_result['rc'], stdout2, stderr2) = self._connection.exec_command('shutdown /r /t %d' % pre_reboot_delay)
+
+            stdout = reboot_result['stdout'] + result1['stdout'] + result2['stdout']
+            stderr = reboot_result['stderr'] + result1['stderr'] + result2['stderr']
+
+        result = {}
+        if reboot_result['rc'] != 0:
+            result['failed'] = True
+            result['rebooted'] = False
+            result['msg'] = "Shutdown command failed, error was: %s %s" % (to_native(stdout.strip()), to_native('stderr'.strip()))
+            return result
+
+        result['failed'] = False
+        result['start'] = datetime.utcnow()
+
+        # Get the original connection_timeout option var so it can be reset after
+        try:
+            self._original_connection_timeout = self._connection.get_option('connection_timeout')
+        except AnsibleError:
+            display.debug("%s: connect_timeout connection option has not been set" % self._task.action)
+
+        return result

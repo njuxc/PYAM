@@ -1,0 +1,4 @@
+Fix 500 error from updateTaskInstancesState API endpoint when `dry_run` not passed (#15889)
+
+The `default` schema parameter is for converting back to JSON,
+`missing` is the one that takes effect when converting to Python dict.

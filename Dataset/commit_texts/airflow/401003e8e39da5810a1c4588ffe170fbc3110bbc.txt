@@ -1,0 +1,9 @@
+[AIRFLOW-5740] Fix Transient failure in Slack test (#6407)
+
+* [AIRFLOW-5740] Fix Transient failure in Slack test
+
+The transient failure is caused by Dict Ordering
+
+* We were comparing string
+
+We were comparing strings

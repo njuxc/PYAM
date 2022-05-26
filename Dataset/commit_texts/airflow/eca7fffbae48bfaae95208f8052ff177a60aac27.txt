@@ -1,0 +1,6 @@
+Fixes check_migrations commands (#8407)
+
+Fixes bug where old "wait_for_migrations" function name
+is left in the lazy loader of the cli_parser
+
+Co-authored-by: Daniel Imberman <daniel@astronomer.io>

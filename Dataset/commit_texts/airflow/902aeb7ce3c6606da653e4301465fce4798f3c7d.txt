@@ -1,0 +1,10 @@
+Fix DB session handling in XCom.set. (#18240)
+
+Since the function has the `@provide_session` decorator it should not be
+committing the session (the decorator handles that if it's not passed a
+session) and nor should it be calling expunge_all -- that detaches all
+objects from the session which is just not needed (or right) behaviour
+form setting an XCom value.
+
+By using the `session` fixture we get the transaction automatically
+rolled back, so we don't need any setup/teardown methods

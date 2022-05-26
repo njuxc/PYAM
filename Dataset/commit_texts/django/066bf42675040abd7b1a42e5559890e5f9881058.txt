@@ -1,0 +1,4 @@
+Removed forced typecasting of help_text/label Field arguments
+
+In any case, setting those variables to non-ascii utf-8 bytestrings
+is now considered a programming error.

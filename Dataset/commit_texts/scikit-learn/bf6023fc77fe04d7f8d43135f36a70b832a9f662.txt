@@ -1,0 +1,3 @@
+FIX Fixes deprecation of positional arguments on test_percent10 (#17577)
+
+Co-authored-by: Guillaume Lemaitre <g.lemaitre58@gmail.com>

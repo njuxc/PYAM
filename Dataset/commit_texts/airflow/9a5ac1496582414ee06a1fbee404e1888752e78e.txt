@@ -1,0 +1,44 @@
+Fix bug that backfill job fail to run when there are tasks run into reschedue state (#17305)
+
+Backfill job fails to run when there are tasks run into rescheduling state. 
+The error log as follows in issue #13322
+
+```
+Traceback (most recent call last):
+  File "/opt/conda/bin/airflow", line 8, in <module>
+    sys.exit(main())
+  File "/opt/conda/lib/python3.8/site-packages/airflow/__main__.py", line 40, in main
+    args.func(args)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/utils/cli.py", line 89, in wrapper
+    return f(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/cli/commands/dag_command.py", line 103, in dag_backfill
+    dag.run(
+  File "/opt/conda/lib/python3.8/site-packages/airflow/models/dag.py", line 1701, in run
+    job.run()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/jobs/base_job.py", line 237, in run
+    self._execute()
+  File "/opt/conda/lib/python3.8/site-packages/airflow/utils/session.py", line 65, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/jobs/backfill_job.py", line 799, in _execute
+    self._execute_for_run_dates(
+  File "/opt/conda/lib/python3.8/site-packages/airflow/utils/session.py", line 62, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/jobs/backfill_job.py", line 722, in _execute_for_run_dates
+    processed_dag_run_dates = self._process_backfill_task_instances(
+  File "/opt/conda/lib/python3.8/site-packages/airflow/utils/session.py", line 62, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/jobs/backfill_job.py", line 620, in _process_backfill_task_instances
+    self._update_counters(ti_status=ti_status)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/utils/session.py", line 65, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/airflow/jobs/backfill_job.py", line 211, in _update_counters
+    ti_status.running.pop(key)
+KeyError: TaskInstanceKey(dag_id='dag_id', task_id='task_name', execution_date=datetime.datetime(2020, 12, 15, 0, 0, tzinfo=Timezone('UTC')), try_number=2)
+```
+
+The root cause is that the field `try_number` doesn't Increase when the task runs into rescheduling state, but there is a reduce operation on `try_number`. 
+
+Currently, I can't think out a good ut to test it, only post the code here to help the one who is affected by it to solve the problem.
+

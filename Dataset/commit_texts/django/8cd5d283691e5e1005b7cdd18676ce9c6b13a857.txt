@@ -1,0 +1,3 @@
+Fixed #14148 -- Ensure the admin_script tests always use an absolute path; PyPy (and sometimes CPython) return relative paths for __file__. Thanks to Alex Gaynor for the report and patch.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@13618 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,15 @@
+Fix LeakyReLU return dtype (#2214)
+
+LeakyReLU returns a tensor with float64 dtype.
+It is stupid, but this line actually produces a float64 array:
+
+```
+    0.5*np.array(0.2, dtype=np.float32)
+```
+
+The theano nnet.relu function does something similar like this with the
+LeakyReLU alpha parameter, which lead to a float64 tensor.
+The solution is to not cast the alpha to float32.
+
+Furthermore I tighten the `test_utils.layer_test`. It is now
+required that the layer's output dtype is equal to the input dtype.

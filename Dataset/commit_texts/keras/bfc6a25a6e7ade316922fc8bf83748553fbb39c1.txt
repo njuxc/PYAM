@@ -1,0 +1,4 @@
+Remove batch_size when doing stepwise fit (#10144)
+
+`batch_size` is always `None` , because `steps_per_epoch` and `batch_size` are mutually exclusive.
+Passing batch_size seems irrelevant as `None` is its default value in `test_loop`

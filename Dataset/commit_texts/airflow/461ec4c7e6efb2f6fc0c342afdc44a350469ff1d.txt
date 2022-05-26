@@ -1,0 +1,9 @@
+Bugfix: dag_bag.get_dag should not raise exception (#18554)
+
+`get_dag` raising exception is breaking many parts of the codebase.
+The usage in code suggests that it should return None if a dag is not
+found. There are about 30 usages expecting it to return None if a dag
+is not found. A missing dag errors out in the UI instead of returning
+a message that DAG is missing.
+
+This PR returns None when a dag is not found in SerializedDagModel instead of raising an exception

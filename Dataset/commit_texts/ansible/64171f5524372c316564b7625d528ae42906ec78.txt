@@ -1,0 +1,3 @@
+Ignore empty result of rabbitmqctl list_parameters (#47021)
+
+Signed-off-by: Abhijeet Kasurde <akasurde@redhat.com>

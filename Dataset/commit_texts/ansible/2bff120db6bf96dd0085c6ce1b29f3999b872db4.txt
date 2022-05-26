@@ -1,0 +1,3 @@
+Fix wrong backup directory var name in apt module (#73840)
+
+* Fix wrong backup directory var name in apt module

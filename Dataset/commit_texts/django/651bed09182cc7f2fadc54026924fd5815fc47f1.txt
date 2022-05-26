@@ -1,0 +1,3 @@
+Made test for issue 19552 compatible with Windows.
+
+Take in account platform path separator. Refs #19552.

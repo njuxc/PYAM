@@ -1,0 +1,2 @@
+BUG: KeyError when a series popped from data frame with bool indexer (#42644)
+

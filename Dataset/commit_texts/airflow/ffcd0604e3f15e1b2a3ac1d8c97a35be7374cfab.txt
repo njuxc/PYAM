@@ -1,0 +1,3 @@
+Avoid sharing session with RenderedTaskInstanceFields write and delete (#9993)
+
+Sharing session with RTIF leads to idle-in-transaction timeout error when DAG serialization is enabled and task running duration exceeds the idle-in-transaction timeout setting of the database.

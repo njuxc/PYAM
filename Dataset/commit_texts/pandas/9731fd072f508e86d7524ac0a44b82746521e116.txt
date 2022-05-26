@@ -1,0 +1,2 @@
+PERF/REGR: isin slowdown for masked type (#42714)
+

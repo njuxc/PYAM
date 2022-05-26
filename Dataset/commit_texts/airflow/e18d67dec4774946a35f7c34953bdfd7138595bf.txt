@@ -1,0 +1,19 @@
+[AIRFLOW-738] Commit deleted xcom items before insert
+
+A delete insert sequence within one transaction can lead
+to a deadlocked transaction with Mariadb / MySQL.
+
+The deletes, in case they affected no rows, all get a shared lock
+(mode IX) on the end-of-table gap. Once the insert is executed,
+the shared lock is still held by all threads,
+and the insert intention waits for the release of this shared lock.
+
+The solution is to not do the following in parallel:
+
+1. Delete the rows you want to insert, when the rows aren't there.
+2. Insert the rows
+
+In this case the risk of not executing the delete and insert
+is relatively low, as it was the users intention to run the
+task. In case it fails in between the two transactions
+the task can be tried.

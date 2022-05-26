@@ -1,0 +1,15 @@
+Fix iosxr netconf plugin response namespace (#49238)
+
+* Fix iosxr netconf plugin response namespace
+
+*  iosxr netconf plugin removes namespace by default
+   for all the responses as parsing of xml is easier
+   without namepsace in iosxr module. However to validate
+   the response received from device against yang model requires
+   namespace to be present in resposne.
+*  Add a parameter in iosxr netconf plugin to control if namespace
+   should be removed from response or not.
+
+* Fix CI issues
+
+* Fix review comment

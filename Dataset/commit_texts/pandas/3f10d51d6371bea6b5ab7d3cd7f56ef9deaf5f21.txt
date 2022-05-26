@@ -1,0 +1,2 @@
+REGR: Series.mode with boolean and pd.NA (#42131)
+

@@ -1,0 +1,10 @@
+Opmitise LoggingMixin.log (#17280)
+
+The log instance is now instantiated per class, instead of per instance,
+saving duplicated getLogger() calls. Those getLogger() calls would
+return the same logger instance anyway, so the functionality is
+effectively the same; only the function call overhead os saved.
+
+The self.log property is also converted to a cached_property, so the
+'is None' check would only happen once per instance, instead of every
+time the property is accessed.

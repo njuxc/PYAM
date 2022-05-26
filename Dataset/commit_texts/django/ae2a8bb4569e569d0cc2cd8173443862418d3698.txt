@@ -1,0 +1,4 @@
+Fixed a test that was failing in Python 3.
+The issue was that as of Python 3, the generators' `next()`
+method becomes `__next()`. Thanks Alex Gaynor for noticing that.
+Refs #19890.

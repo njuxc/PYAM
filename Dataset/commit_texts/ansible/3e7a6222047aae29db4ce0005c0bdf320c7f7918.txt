@@ -1,0 +1,9 @@
+Fix unexpected exception when a role has an empty argument_specs.yml (#75604)
+
+* Fix role with empty argument_specs.yml
+
+* Use try/except and add changelog fragment
+
+* Always return a dict
+
+* Add test for empty argument_specs key

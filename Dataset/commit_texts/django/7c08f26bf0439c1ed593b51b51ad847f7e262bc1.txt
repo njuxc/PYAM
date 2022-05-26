@@ -1,0 +1,10 @@
+Fixed #32260 -- Made View.as_view() do not use update_wrapper().
+
+View.as_view() should not use update_wrapper() for copying attributes
+it's unintended and have side-effects such as adding `self` to the
+signature.
+
+This also fixes system check for arguments of custom error handler
+views with class-based views.
+
+Co-authored-by: Nick Pope <nick.pope@flightdataservices.com>

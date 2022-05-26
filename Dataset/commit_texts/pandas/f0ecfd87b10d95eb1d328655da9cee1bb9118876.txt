@@ -1,0 +1,2 @@
+API: require timezone match in DatetimeArray.take (#37356)
+

@@ -1,0 +1,4 @@
+Added safety to URL decoding in is_safe_url() on Python 2
+
+The errors='replace' parameter to force_text altered the URL before checking
+it, which wasn't considered sane. Refs 24fc935218 and ada7a4aef.

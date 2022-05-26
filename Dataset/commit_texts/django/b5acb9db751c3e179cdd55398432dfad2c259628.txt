@@ -1,0 +1,1 @@
+Fixed #31907 -- Fixed missing validate_key() calls in cache backends.

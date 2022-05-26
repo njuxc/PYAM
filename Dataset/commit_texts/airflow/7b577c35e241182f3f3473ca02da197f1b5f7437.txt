@@ -1,0 +1,22 @@
+Bugfix: resources in `executor_config` breaks Graph View in UI (#15199)
+
+closes https://github.com/apache/airflow/issues/14327
+
+When using `KubernetesExecutor` and the task as follows:
+
+```python
+PythonOperator(
+    task_id=f"sync_{table_name}",
+    python_callable=sync_table,
+    provide_context=True,
+    op_kwargs={"table_name": table_name},
+    executor_config={"KubernetesExecutor": {"request_cpu": "1"}},
+    retries=5,
+    dag=dag,
+)
+```
+
+it breaks the UI as settings resources in such a way is only there
+for backwards compatibility.
+
+This commits fixes it.

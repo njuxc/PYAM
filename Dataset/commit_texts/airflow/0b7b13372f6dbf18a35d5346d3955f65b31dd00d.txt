@@ -1,0 +1,3 @@
+Move DB call out of ``DatabricksHook.__init__`` (#18339)
+
+Because of that using `DatabricksHook` in DAG files causes tons of issues as DB calls are made everytime files is parsed.

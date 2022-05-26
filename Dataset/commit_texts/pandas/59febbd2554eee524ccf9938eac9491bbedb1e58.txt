@@ -1,0 +1,2 @@
+BUG/ENH: consistent gzip compression arguments (#35645)
+

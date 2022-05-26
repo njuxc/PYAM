@@ -1,0 +1,25 @@
+Fix ``TimeSensorAsync`` (#17748)
+
+When using the following example dag, it currently fails with `You cannot pass naive datetimes` error.
+This happens because `TimeSensorAsync` passes a `datetime.time` object while `DateTimeTrigger` expects
+a `datetime.datetime` object. This PR fixes that.
+
+Example DAG:
+
+```python
+from datetime import timedelta
+
+from airflow import DAG
+from airflow.sensors.time_sensor import TimeSensorAsync
+from airflow.utils import dates, timezone
+
+with DAG(
+    dag_id='example_date_time_async_operator',
+    schedule_interval='0 0 * * *',
+    start_date=dates.days_ago(2),
+    dagrun_timeout=timedelta(minutes=60),
+    tags=['example', 'example2', 'async'],
+) as dag:
+
+    TimeSensorAsync(task_id="test-2", target_time=timezone.time(22, 43, 0))
+```

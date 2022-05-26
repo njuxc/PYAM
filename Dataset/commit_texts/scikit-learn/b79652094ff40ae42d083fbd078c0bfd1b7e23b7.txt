@@ -1,0 +1,3 @@
+BUG digits grid search was passing cv to the wrong method
+
+GridSearchCV actually ignores this argument, as reported in #1815.

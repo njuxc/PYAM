@@ -1,0 +1,3 @@
+FIX Gaussian KDE should return array, not scalar
+
+Fixes #3269.

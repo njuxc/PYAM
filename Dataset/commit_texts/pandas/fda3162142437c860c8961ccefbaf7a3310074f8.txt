@@ -1,0 +1,2 @@
+BUG: Issue with pd.cut on Series with duplicate index (#42448)
+

@@ -1,0 +1,2 @@
+MAINT scipy-dev failures because of too numerically strict tests (#18071)
+

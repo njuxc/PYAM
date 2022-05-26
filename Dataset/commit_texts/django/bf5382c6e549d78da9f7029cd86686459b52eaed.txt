@@ -1,0 +1,3 @@
+Fixed #22234 -- Replaced OS-specific code with subprocess.call() in dbshell.
+
+This fixes escaping of special characters on Windows.

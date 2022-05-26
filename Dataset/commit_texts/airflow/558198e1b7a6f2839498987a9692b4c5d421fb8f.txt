@@ -1,0 +1,7 @@
+[AIRFLOW-1614] Replace inspect.stack() with sys._getframe()
+
+inspect.stack() is really expensive, and slows
+down processing of dags
+having large numbers (100s, 1000s) of subdags.
+
+Closes #2610 from gbenison/gcbenison2

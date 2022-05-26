@@ -1,0 +1,5 @@
+Fix kullback_leibler_divergence (#4800)
+
+The kullback_leibler_divergence metric in metrics.py returned an output
+with dimensionality N-1 (where N is the dimensionality of the target).
+Add mean after sum to fix this, such that always a scalar is returned.

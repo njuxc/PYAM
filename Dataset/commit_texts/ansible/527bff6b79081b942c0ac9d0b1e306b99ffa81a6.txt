@@ -1,0 +1,7 @@
+Don't fail for mixed typed keys (#73726)
+
+* Don't fail for mixed typed keys
+
+  but warn that content cound not be sorted because of this
+
+* added tests

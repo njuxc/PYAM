@@ -1,0 +1,1 @@
+fixed bug where scaling policy return a random policy if many autoscale group have policies with same name.

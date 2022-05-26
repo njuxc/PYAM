@@ -1,0 +1,8 @@
+Fix OOB score calculation for non-contiguous targets
+
+OOB scores of RandomForestClassifier are incorrectly calculated
+because of confusion between predicted labels and indices of a target.
+For example, when you label the `digits` dataset from 1 or greater
+number but 0, OOB score becomes nearly zero.
+This patch will fix this error, and a test is added in order to avoid
+regression.

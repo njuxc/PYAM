@@ -1,0 +1,1 @@
+MISC raise NotImplementedError instead of value error in decision_function of sparse SVM

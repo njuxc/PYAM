@@ -1,0 +1,2 @@
+Fixed #28906 -- Removed unnecessary bool() calls.
+

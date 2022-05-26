@@ -1,0 +1,5 @@
+[get_url] Return status_code on HTTP 304 (#65739)
+
+Return field status_code on HTTP status 304 (implemented by lkthomas)
+Add an integration test for this case.
+Fixes #65263

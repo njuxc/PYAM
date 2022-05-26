@@ -1,0 +1,90 @@
+DF.__setitem__ creates extension column when given extension scalar (#34875)
+
+* Bugfix to make DF.__setitem__ create extension column instead of object column when given an extension scalar
+
+* removed bad whitespace
+
+* Apply suggestions from code review
+
+Checking if extension dtype via built in function instead of manually
+
+Co-authored-by: Tom Augspurger <TomAugspurger@users.noreply.github.com>
+
+* added missing :
+
+* modified cast_extension_scalar_to_array test to include an Interval type
+
+* added user-facing test for extension type bug
+
+* fixed pep8 issues
+
+* added note about bug in setting series to scalar extension type
+
+* corrected order of imports
+
+* corrected order of imports
+
+* fixed black formatting errors
+
+* removed extra comma
+
+* updated cast_scalar_to_arr to support tuple shape for extension dtype
+
+* removed unneeded code
+
+* added coverage for datetime with timezone in extension_array test
+
+* added TODO
+
+* correct line that was too long
+
+* fixed dtype issue with tz test
+
+* creating distinct arrays for each column
+
+* resolving mypy error
+
+* added docstring info and test
+
+* removed unneeded import
+
+* flattened else case in init
+
+* refactored extension type column fix
+
+* reverted docstring changes
+
+* reverted docstring changes
+
+* removed unneeded imports
+
+* reverted test changes
+
+* fixed construct_1d_arraylike bug
+
+* reorganized if statements
+
+* moved what's new statement to correct file
+
+* created new test for period df construction
+
+* added assert_frame_equal to period_data test
+
+* Using pandas array instead of df constructor for better test
+
+Co-authored-by: Joris Van den Bossche <jorisvandenbossche@gmail.com>
+
+* changed wording
+
+* pylint fixes
+
+* parameterized test and added comment
+
+* removed extra comma
+
+* parameterized test
+
+* renamed test
+
+Co-authored-by: Tom Augspurger <TomAugspurger@users.noreply.github.com>
+Co-authored-by: Joris Van den Bossche <jorisvandenbossche@gmail.com>

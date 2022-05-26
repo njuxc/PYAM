@@ -1,0 +1,3 @@
+[AIRFLOW-6045] Error on failed execution of compile_assets (#6640)
+
+https://issues.apache.org/jira/browse/AIRFLOW-6045

@@ -1,0 +1,6 @@
+Fixed #16906 -- Format datetimes with str/unicode instead of strftime where possible: it's faster and it works for all dates.
+
+Also ensured that datetime_safe is used wherever strftime is called on dates/datetimes that may be before 1900.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@16978 bcc190cf-cafb-0310-a4f2-bffc1f526a37

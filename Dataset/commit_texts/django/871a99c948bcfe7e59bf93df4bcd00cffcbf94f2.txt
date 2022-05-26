@@ -1,0 +1,3 @@
+Fixed #11860. Changed NullBooleanSelect's _has_changed method to repect differences between None and False. Thanks, matiasb.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12523 bcc190cf-cafb-0310-a4f2-bffc1f526a37

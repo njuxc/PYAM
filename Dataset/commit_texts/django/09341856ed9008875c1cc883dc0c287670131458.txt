@@ -1,0 +1,6 @@
+Used Signature API instead of deprecated inspect.getcallargs().
+
+inspect.getcallargs() was deprecated in Python 3.5 and the Signature
+API (PEP 362) has better support for decorated functions (by default,
+it follows the __wrapped__ attribute set by functools.wraps for
+example).

@@ -1,0 +1,8 @@
+Fixed #21574 -- Handle bytes consistently in utils.text.normalize_newlines.
+
+All input is now coerced to text before being normalized.
+This changes nothing under Python 2 but it allows bytes
+to be passed to the function without a TypeError under Python3
+(bytes are assumed to be utf-8 encoded text).
+
+Thanks to trac user vajrasky for the report.

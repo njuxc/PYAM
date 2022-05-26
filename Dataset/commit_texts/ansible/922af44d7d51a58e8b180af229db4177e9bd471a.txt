@@ -1,0 +1,12 @@
+Fix a bug that caused exception on XenServer 7.1 with Cummulative Update (#52303)
+
+- xenserver module_util: fixed a bug in gather_vm_params function where
+   an exception was generated if XenServer product_version_text_short
+   parameter contained non numeric characters, e.g. "7.1 CU1" on
+   XenServer version 7.1 with Cummulative Update 1. Code was changed
+   to use product_version parameter instead which is all numeric.
+ - xenserver module_util: get_xenserver_version function is changed
+   to return a list of integers for major, minor and update version
+   instead of list of strings.
+ - xenserver module_util: unit tests are updated according to changes.
+ - xenserver module_util: removed unused imports.

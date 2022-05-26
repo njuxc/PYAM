@@ -1,0 +1,6 @@
+Add further workarounds for HTMLParser with Python 3.4.
+
+Python 3.5 will change the default value of convert_charrefs, so 3.4
+gives warnings if it's not present. This is slightly technical as 2.7
+doesn't have the kwarg. Thankfully, we already have a bunch of
+workarounds for different versions.

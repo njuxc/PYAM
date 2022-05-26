@@ -1,0 +1,3 @@
+Fixed small security hole in bin/compile-messages.py by escaping the .po filename in os.system() call. Announcement forthcoming
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@3592 bcc190cf-cafb-0310-a4f2-bffc1f526a37

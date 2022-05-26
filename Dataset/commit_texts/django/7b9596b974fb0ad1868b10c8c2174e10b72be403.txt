@@ -1,0 +1,3 @@
+Fixed #32034 -- Removed redundant get_app_config() call in AdminSite.app_index.
+
+app_config.verbose_name is already in app_dict.

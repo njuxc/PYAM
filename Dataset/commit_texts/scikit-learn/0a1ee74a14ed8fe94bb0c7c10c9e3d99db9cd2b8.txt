@@ -1,0 +1,7 @@
+EXA plot_confusion_matrix example breaks down if not all classes present (#13126)
+
+* fix #12700 plot_confusion_matrix example breaks down if not all classes are present in the test data
+
+* plot_confusion_matrix: update function call, fix style issues
+
+* remove redundant confusion_matrix call

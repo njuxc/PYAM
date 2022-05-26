@@ -1,0 +1,4 @@
+Fixed `GeoManager.get_query_set` incompatibility with `db_manager` method.  
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12021 bcc190cf-cafb-0310-a4f2-bffc1f526a37

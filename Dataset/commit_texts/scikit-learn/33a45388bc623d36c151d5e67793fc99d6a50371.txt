@@ -1,0 +1,5 @@
+FIX + TST stability problems with scipy.special.expit
+
+Fixes issue reported by @argriffing at #2882: expit is buggy in
+SciPy < 0.14 (to be released). Switch implementation back to
+old one based on stability test; toughened unit tests.

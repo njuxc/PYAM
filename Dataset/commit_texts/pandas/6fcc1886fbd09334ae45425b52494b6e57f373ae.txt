@@ -1,0 +1,2 @@
+API: dont-special-case datetimelike in setting new column (#40084)
+

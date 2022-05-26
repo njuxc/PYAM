@@ -1,0 +1,2 @@
+BUG: NumericIndex.insert (#43933)
+

@@ -1,0 +1,3 @@
+[py3] Removed gratuitous use of map/lambda
+
+that causes a test failure on Python 3 because map returns an iterator.

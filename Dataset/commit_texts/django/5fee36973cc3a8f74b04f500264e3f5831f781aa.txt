@@ -1,0 +1,4 @@
+Optimized BaseDatabaseSchemaEditor._effective_default() a bit,
+
+This eliminates an unneeded call to datetime.now() when
+field.get_internal_type() equals "DateTimeField".

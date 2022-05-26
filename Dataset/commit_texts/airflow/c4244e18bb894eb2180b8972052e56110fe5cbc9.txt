@@ -1,0 +1,4 @@
+Fix calling `get_client` in BigQueryHook.table_exists (#9916)
+
+Adding `project_id` argument to `get_client` method 
+otherwise this call always falls back to the default connection id.

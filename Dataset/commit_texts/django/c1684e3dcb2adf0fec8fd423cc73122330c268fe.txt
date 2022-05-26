@@ -1,0 +1,4 @@
+Fixed #18731 -- Cleaned up split_exclude's use of can_reuse
+
+The outer query's set of reusable joins (can_reuse) was passed to the
+inner query's add_filter call. This was incorrect.

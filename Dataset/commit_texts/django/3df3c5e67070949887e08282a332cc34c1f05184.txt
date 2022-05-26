@@ -1,0 +1,5 @@
+Fixed #26480 -- Fixed crash of contrib.auth.authenticate() on decorated authenticate() methods of authentication backends.
+
+The Signature API (PEP 362) has better support for decorated functions
+(by default, it follows the __wrapped__ attribute set by
+functools.wraps for example).

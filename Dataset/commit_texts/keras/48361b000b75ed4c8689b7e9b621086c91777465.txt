@@ -1,0 +1,3 @@
+Temporary bug fix. Checking before using the attribute.
+
+PiperOrigin-RevId: 408761441

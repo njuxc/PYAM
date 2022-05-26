@@ -1,0 +1,11 @@
+Updated MultiValueDict.update() to mirror dict.update() behavior.
+
+Changes in behavior include:
+
+- Accepting iteration over empty sequences, updating nothing.
+- Accepting iterable of 2-tuples providing key-value pairs.
+- Failing with the same or comparable exceptions for invalid input.
+
+Notably this replaces the previous attempt to catch TypeError which was
+unreachable as the call to .items() resulted in AttributeError on
+non-dict objects.

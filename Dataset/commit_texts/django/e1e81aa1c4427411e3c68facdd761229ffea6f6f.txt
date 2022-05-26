@@ -1,0 +1,12 @@
+Fixed #32713, Fixed CVE-2021-32052 -- Prevented newlines and tabs from being accepted in URLValidator on Python 3.9.5+.
+
+In Python 3.9.5+ urllib.parse() automatically removes ASCII newlines
+and tabs from URLs [1, 2]. Unfortunately it created an issue in
+the URLValidator. URLValidator uses urllib.urlsplit() and
+urllib.urlunsplit() for creating a URL variant with Punycode which no
+longer contains newlines and tabs in Python 3.9.5+. As a consequence,
+the regular expression matched the URL (without unsafe characters) and
+the source value (with unsafe characters) was considered valid.
+
+[1] https://bugs.python.org/issue43882 and
+[2] https://github.com/python/cpython/commit/76cd81d60310d65d01f9d7b48a8985d8ab89c8b4

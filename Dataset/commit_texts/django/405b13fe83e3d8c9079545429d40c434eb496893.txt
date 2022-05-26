@@ -1,0 +1,9 @@
+Fixed migrate when called inside a transaction.
+
+This is useful for tests manually calling migrate inside a testcase,
+for normal usage this should make no difference, since there is no
+surrounding transaction after all. If there is one we still try to
+leave the transaction in a useable state (for postgres at least).
+
+If this commit turns out to be causing issues, settings savepoint=False
+is probably the right fix :)

@@ -1,0 +1,2 @@
+Bug in setitem raising ValueError with row-slice indexer on df with list on rhs (#41268)
+

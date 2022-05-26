@@ -1,0 +1,2 @@
+Prevent error if module.params['path'] has no path included. (#50106)
+

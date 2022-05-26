@@ -1,0 +1,16 @@
+Remove rendundant file extension in numpy.ctypeslib.load_library().
+
+There is no need to specify the library extension. From the numpy
+documentation:
+
+"""This function takes the name of the shared library (including any
+prefix like ‘lib’ but excluding the extension)"""
+
+Also, giving an extension was raising an exception under Debian Lenny
+(numpy.__version__ = '1.1.0').
+
+Note: Tested under Linux, OsX but not under win32.
+
+From: Fabian Pedregosa <fabian.pedregosa@inria.fr>
+
+git-svn-id: https://scikit-learn.svn.sourceforge.net/svnroot/scikit-learn/trunk@353 22fbfee3-77ab-4535-9bad-27d1bd3bc7d8

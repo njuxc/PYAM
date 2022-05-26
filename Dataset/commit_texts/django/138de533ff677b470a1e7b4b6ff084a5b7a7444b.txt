@@ -1,0 +1,8 @@
+Fixed #19819 - Improved template filter errors handling.
+
+Wrap the Parser.compile_filter method call with a try/except and call the
+newly added Parser.compile_filter_error(). Overwrite this method in the
+DebugParser to throw the correct error.
+
+Since this error was otherwise catched by the compile_function try/except
+block the debugger highlighted the wrong line.

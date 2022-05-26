@@ -1,0 +1,9 @@
+Fix for callback plugins on Python3 when a module returns dictionary keys that aren't strings
+
+This fixes one of the problems reported in https://github.com/ansible/ansible/issues/49343
+
+Upstream Python3 bug for the json traceback:
+https://bugs.python.org/issue25457
+
+and PR that may fix it:
+https://github.com/python/cpython/pull/8011

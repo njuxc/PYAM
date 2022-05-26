@@ -1,0 +1,16 @@
+Remove Unnecessary list literal in Tuple for Kylin Operator (#10252)
+
+It is unnecessary to use a list or tuple literal within a call to tuple.
+
+Before:
+```
+In [1]: tuple(["ERROR", "DISCARDED", "KILLED", "SUICIDAL", "STOPPED"])
+Out[1]: ('ERROR', 'DISCARDED', 'KILLED', 'SUICIDAL', 'STOPPED')
+```
+
+After:
+
+```
+In [4]: ("ERROR", "DISCARDED", "KILLED", "SUICIDAL", "STOPPED",)
+Out[4]: ('ERROR', 'DISCARDED', 'KILLED', 'SUICIDAL', 'STOPPED')
+```

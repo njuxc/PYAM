@@ -1,0 +1,3 @@
+Merge pull request #3811 from MechCoder/fix_repeated_checking
+
+[MRG] Fix repeated calls of check_pairwise and type casting in pairwise_distances_argmin_min

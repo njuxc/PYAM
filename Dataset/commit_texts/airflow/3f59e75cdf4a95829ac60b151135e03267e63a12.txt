@@ -1,0 +1,3 @@
+KubernetesPodOperator: use randomized name to get the failure status (#12171)
+
+Co-authored-by: Ash Berlin-Taylor <ash_github@firemirror.com>

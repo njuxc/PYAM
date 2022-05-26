@@ -1,0 +1,7 @@
+Epoch is 0 indexed, add one to match from fit (#8137)
+
+* Epoch is 0 index, add one to match other output
+
+* Fix pep8 style
+
+* Fix filepath in tests, ModelCheckpoint

@@ -1,0 +1,3 @@
+Fix argument_spec for modules that are using the old version (#47693)
+
+* Use correct argument spec

@@ -1,0 +1,5 @@
+[MRG + 2] Fixed parameter setting in SelectFromModel (#7764)
+
+* Fixed cloning ``estimator`` again when calling fit a second time in SelectFromModel
+
+* fix link in whatsnew

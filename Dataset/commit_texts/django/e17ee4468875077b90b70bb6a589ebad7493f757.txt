@@ -1,0 +1,4 @@
+Fixed #32128 -- Added asgiref 3.3 compatibility.
+
+Thread sensitive parameter is True by default from asgiref v3.3.0.
+Added an explicit thread_sensitive=False to previously implicit uses.

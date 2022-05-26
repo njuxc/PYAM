@@ -1,0 +1,9 @@
+BugFix: Fix remote log in azure storage blob displays in one line (#14313)
+
+* Fix wasb_task_handler.py for reading remote log on blog with one line
+
+* Fix wasb_task_handler.py for reading remote log on blog with one line
+
+* Fix wasb_task_handler.py for reading remote log on blog with one line
+
+* modify wasb readall() to content_as_text

@@ -1,0 +1,5 @@
+Fixed reading from zip package to default to text. (#13984)
+
+* Fixed reading from zip package to default to text.
+
+* Fixed open_maybe_zip unit test to account for io.TextIOWrapper.

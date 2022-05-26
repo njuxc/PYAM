@@ -1,0 +1,7 @@
+Fix text_to_word_sequence with unicode text (#7634)
+
+* Fix text_to_word_sequence with unicode text
+
+Fixes #7624
+
+* Drop skipif and test Tokenizer

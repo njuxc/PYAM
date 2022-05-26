@@ -1,0 +1,11 @@
+IndexError fix (#7865)
+
+* IndexError fix
+
+When a corpus has less than MAX_NB_WORDS, num_words will be set to len(word_index) . However, since the index is zero based it causes an IndexError. eg. When there are 57 total words in the corpus you get the error 'IndexError: index 57 is out of bounds for axis 0 with size 57' since the index should stop at 56 (zero based).
+
+* missed one more spot
+
+* Correction to previous commit
+
+* Reverted to previous commit

@@ -1,0 +1,7 @@
+[MRG] Fix segfault in AgglomerativeClustering with read-only mmaps (#12485)
+
+This fixes a segfault in AgglomerativeClustering with read-only mmaps that happens inside `ward_tree` when calling `scipy.cluster.hierarchy.ward`.
+
+Closes https://github.com/scikit-learn/scikit-learn/issues/12483
+
+(see the above issue for more details)

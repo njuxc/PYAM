@@ -1,0 +1,9 @@
+Fix ctc_batch_cost() error when batch_size = 1 (#9775)
+
+* Fix ctc_batch_cost() error when batch_size = 1
+
+* Use axis=-1 for the sake of semantics
+
+* Add a test case with batch_size=1 in test_ctc()
+
+* Remove trivial print

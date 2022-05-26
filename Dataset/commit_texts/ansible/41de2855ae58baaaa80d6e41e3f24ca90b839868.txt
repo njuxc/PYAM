@@ -1,0 +1,2 @@
+Remove elements= from arg_spec when type is not 'list'. (#50484)
+

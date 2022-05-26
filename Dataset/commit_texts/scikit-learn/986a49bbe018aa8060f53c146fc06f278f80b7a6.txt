@@ -1,0 +1,9 @@
+FIX Split data using _safe_split in _permutaion_test_score (#5697)
+
+Squashed commits:
+[94fd9f4] split data using _safe_split in _permutaion_test_scorer
+[522053b] adding test case test_permutation_test_score_pandas() to check if permutation_test_score plays nice with pandas dataframe/series
+[21b23ce] running test_permutation_test_score_pandas on iris data to prevent warnings.
+[15a48bf] adding safe_indexing to _shuffle function
+[9ea5c9e] adding test case test_permutation_test_score_pandas() to check if permutation_test_score plays nice with pandas dataframe/series
+[3cf5e8f] split  data using _safe_split in _permutaion_test_scorer to fix error when using Pandas DataFrame/Series

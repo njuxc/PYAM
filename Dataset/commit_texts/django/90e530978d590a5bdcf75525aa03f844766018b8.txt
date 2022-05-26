@@ -1,0 +1,8 @@
+Fixed #18210 -- Escaped special characters in reverse prefixes.
+
+Ensured that special characters passed in to reverse via the
+prefix argument are properly escaped so that calls to
+django.utils.regex_helpers.normalize and/or string formatting
+operations don't result in exceptions.
+
+Thanks to toofishes for the error report.

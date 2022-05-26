@@ -1,0 +1,7 @@
+Fixing finite generator race condition (#8162)
+
+* Fixing race condition
+
+Check again for empty queue after detecting that all threads have finished.
+
+* Updating the test to check for all set items

@@ -1,0 +1,3 @@
+Bugfix: Sync Access Control defined in DAGs when running sync-perm (#13377)
+
+fixes https://github.com/apache/airflow/issues/13376

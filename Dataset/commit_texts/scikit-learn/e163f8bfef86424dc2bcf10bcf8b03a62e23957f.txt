@@ -1,0 +1,8 @@
+FIX DictVectorizer behavior on empty X and empty samples
+
+More useful error message for former; return all zeros for latter.
+
+Also changed integer type to np.intc, which matches scipy.sparse
+index types more closely.
+
+Fixes #1903.

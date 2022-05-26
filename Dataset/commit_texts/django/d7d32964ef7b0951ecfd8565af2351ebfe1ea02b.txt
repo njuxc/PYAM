@@ -1,0 +1,2 @@
+Fixed #29541 -- Fixed Cursor.execute() crash when setinputsizes() is called without arguments wit cx_Oracle 6.4.
+

@@ -1,0 +1,2 @@
+REF: reuse self.grouper.result_index (#44122)
+

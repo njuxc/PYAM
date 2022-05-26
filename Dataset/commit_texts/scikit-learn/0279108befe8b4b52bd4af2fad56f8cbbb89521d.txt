@@ -1,0 +1,2 @@
+API don't default get_params output to None in the future (#14464)
+

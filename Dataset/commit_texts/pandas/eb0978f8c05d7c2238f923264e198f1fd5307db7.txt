@@ -1,0 +1,2 @@
+PERF: use ndarray.take instead of algos.take (#40852)
+

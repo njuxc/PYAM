@@ -1,0 +1,5 @@
+Removed the _-prefix for populate().
+
+Several parts of Django call get_apps() with a comment along this lines
+of "this has the side effect of calling _populate()". I fail to see how
+this is better than just calling populate()!

@@ -1,0 +1,4 @@
+Fix permission error on non-POSIX filesystem (#13121)
+
+* Fix https://github.com/apache/airflow/issues/12669
+ - failure to change ownership of log file on azure

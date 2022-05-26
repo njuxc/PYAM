@@ -1,0 +1,4 @@
+Fixed #18389 -- Fixed the way contribute_to_class is called
+
+Now this method is only called only if the object is an instance.
+This allows to have field classes as model class attributes.

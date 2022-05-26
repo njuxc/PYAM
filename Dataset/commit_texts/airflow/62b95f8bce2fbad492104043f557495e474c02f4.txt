@@ -1,0 +1,10 @@
+[AIRFLOW-2498] Fix Unexpected argument in SFTP Sensor
+
+- The SFTP sensor is using SFTP hook and passing
+`sftp_conn_id` to `sftp_conn_id` parameter which
+doesn't exist. The solution would be to remove the
+parameter name, hence defaulting to first
+parameter which in this case would be
+`ftp_conn_id`
+
+Closes #3392 from kaxil/AIRFLOW-2498

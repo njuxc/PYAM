@@ -1,0 +1,5 @@
+Fixed #29723 -- Fixed crash if InlineModelAdmin.has_add_permission() doesn't accept the obj argument.
+
+* Refs #27991 -- Added testing for ModelAdmin.get_inline_instances() if the inline's has_add_permission() doesn't accept 'obj'.
+
+* Fixed #29723 -- Fixed crash if InlineModelAdmin.has_add_permission() doesn't accept the obj argument.

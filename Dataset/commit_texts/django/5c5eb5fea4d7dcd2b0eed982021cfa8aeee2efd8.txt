@@ -1,0 +1,7 @@
+Fixed an inconsistency introduced in 547b1810.
+
+mark_safe and mark_for_escaping should have been kept similar.
+
+On Python 2 this change has no effect. On Python 3 it fixes the use case
+shown in the regression test for mark_for_escaping, which used to raise
+a TypeError. The regression test for mark_safe is just for completeness.

@@ -1,0 +1,8 @@
+fix defaultdict call
+
+In Python 2.7, the current version fails with:
+
+$ python -c 'from collections import defaultdict; defaultdict(None)'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: first argument must be callable

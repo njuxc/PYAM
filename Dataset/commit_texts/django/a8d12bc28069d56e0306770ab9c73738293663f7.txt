@@ -1,0 +1,3 @@
+Fixed #29400 -- Fixed crash in custom template filters that use decorated functions.
+
+Regression in 620e9dd31a2146d70de740f96a8cb9a6db054fc7.

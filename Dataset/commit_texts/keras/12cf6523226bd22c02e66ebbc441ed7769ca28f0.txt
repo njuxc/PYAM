@@ -1,0 +1,2 @@
+Fix dtype designation for `variable` of CNTK and Add its tests (#9903)
+

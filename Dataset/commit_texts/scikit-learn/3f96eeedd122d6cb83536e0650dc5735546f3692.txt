@@ -1,0 +1,3 @@
+Fix np.set_printoptions argument change in numpy 1.14.dev (#10132)
+
+https://github.com/numpy/numpy/pull/9332/files change sign='legacy' to legacy=True in the np.set_printoptions arguments.

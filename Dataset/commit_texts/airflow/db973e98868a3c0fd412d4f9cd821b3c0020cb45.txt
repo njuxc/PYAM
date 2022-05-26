@@ -1,0 +1,2 @@
+[AIRFLOW-1252] API accept JSON when invoking a trigger dag (#2334)
+

@@ -1,0 +1,1 @@
+Fixed #23426 -- Don't require double percent sign in RunSQL without parameters

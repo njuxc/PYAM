@@ -1,0 +1,4 @@
+Fixed failing pylint errors introduced in #13403 (#13429)
+
+This fixes a failing pylint error introduced in #13403. This error
+also trigger another pylint problem involved with c-extension

@@ -1,0 +1,3 @@
+BUG: Fix metrics to run on 2.5
+
+Replace string's 'format' method by good old '%'

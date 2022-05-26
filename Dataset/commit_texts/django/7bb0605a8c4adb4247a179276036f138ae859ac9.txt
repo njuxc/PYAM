@@ -1,0 +1,2 @@
+Fixed isolation of GenericRelationTests.test_filter_targets_related_pk().
+

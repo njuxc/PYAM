@@ -1,0 +1,2 @@
+Fix is_terminal_support_colors functtion (#9734)
+

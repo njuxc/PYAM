@@ -1,0 +1,5 @@
+Use sys.exit() instead of exit() (#10414)
+
+The `exit` and `quit` functions are actually `site.Quitter` objects and are loaded, at interpreter start up, from `site.py`. However, if the interpreter is started with the `-S` flag, or a custom `site.py` is used then `exit` and `quit` may not be present. It is recommended to use `sys.exit()` which is built into the interpreter and is guaranteed to be present.
+
+Previously, `exit()` was used and wouls fail if the interpreter is passed the `-S` option.

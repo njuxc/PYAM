@@ -1,0 +1,4 @@
+Fixed random aggregation_regress test_more_more_more() failure
+
+The cause was assuming that an unordered queryset returns the values
+always in the same order.

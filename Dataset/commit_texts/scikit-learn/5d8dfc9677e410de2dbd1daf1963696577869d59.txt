@@ -1,0 +1,2 @@
+FIX SkLearn `.score()` method generating error with Dask DataFrames (#12462)
+

@@ -1,0 +1,2 @@
+ENH: NumericIndex for any numpy int/uint/float dtype (#41153)
+

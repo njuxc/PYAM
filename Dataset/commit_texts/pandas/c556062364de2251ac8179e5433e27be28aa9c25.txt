@@ -1,0 +1,2 @@
+Fix str dtype -> IntegerDtype conversions (#43949)
+

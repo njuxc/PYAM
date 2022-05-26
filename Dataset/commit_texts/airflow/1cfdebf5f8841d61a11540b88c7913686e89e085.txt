@@ -1,0 +1,4 @@
+Fix insert_job method of BigQueryHook (#9899)
+
+The method should submit the job and wait for the result.
+Closes: #9897

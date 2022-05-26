@@ -1,0 +1,22 @@
+Explain sentry default environment variable for subprocess hook (#18346)
+
+* Explain sentry default environment variable for subprocess hook
+
+Sentry by default monkey-patches standard library POpen function
+to capture and pass current process' environment to subprocess
+with `SUBPROCESS_` prefix. This break SubprocessHook tests
+when sentry tests are run before SubprocessHook tests, and also
+it modifies SubprocessHook behaviour (and promise) in production
+environment as well.
+
+This PR:
+
+* adds documentation to both sentry documentation and the
+  SubprocessHook documentation explaining the interaction between
+  the two
+* Adds documentation explaining how to disable this default
+  Sentry behaviour
+* disables default integrations in the Sentry tests to avoid
+  side-effects
+
+Fixes: #18268

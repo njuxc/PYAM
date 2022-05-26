@@ -1,0 +1,24 @@
+Elasticsearch Provider: Fix logs downloading for tasks (#14686)
+
+Without this, Webserver fails with:
+
+```
+[2021-03-09 18:55:19,640] {base.py:122} INFO - POST http://aa.aa:9200/_count [status:200 request:0.142s]
+[2021-03-09 18:55:19 +0000] [64] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/sync.py", line 181, in handle_request
+    for item in respiter:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wsgi.py", line 506, in __next__
+    return self._next()
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wrappers/base_response.py", line 45, in _iter_encoded
+    for item in iterable:
+  File "/usr/local/lib/python3.7/site-packages/airflow/utils/log/log_reader.py", line 84, in read_log_stream
+    logs, metadata = self.read_log_chunks(ti, current_try_number, metadata)
+  File "/usr/local/lib/python3.7/site-packages/airflow/utils/log/log_reader.py", line 58, in read_log_chunks
+    logs, metadatas = self.log_handler.read(ti, try_number, metadata=metadata)
+  File "/usr/local/lib/python3.7/site-packages/airflow/utils/log/file_task_handler.py", line 217, in read
+    log, metadata = self._read(task_instance, try_number_element, metadata)
+  File "/usr/local/lib/python3.7/site-packages/airflow/providers/elasticsearch/log/es_task_handler.py", line 186, in _read
+    and offset >= metadata['max_offset']
+TypeError: '>=' not supported between instances of 'str' and 'int'
+```

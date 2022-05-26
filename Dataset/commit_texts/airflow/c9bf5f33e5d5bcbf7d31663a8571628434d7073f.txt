@@ -1,0 +1,3 @@
+Coerce datetime to pendulum for timetable (#18522)
+
+`Timetable.infer_manual_data_interval()` expects a `pendulum.DateTime`, but `marshmallow_sqlalchemy.auto_field()` only automatically decodes to `datetime.datetime`. So we perform one additional coersion before passing the value on.

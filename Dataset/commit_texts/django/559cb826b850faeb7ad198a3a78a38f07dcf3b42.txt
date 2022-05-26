@@ -1,0 +1,5 @@
+Fixed #21049 -- Fixed autoreload for Python 3
+
+Changed th system module values check to return a list.
+In Python 3 it returns a dict_view which could occassionally produce
+a runtime error of "dictionary changed size during iteration".

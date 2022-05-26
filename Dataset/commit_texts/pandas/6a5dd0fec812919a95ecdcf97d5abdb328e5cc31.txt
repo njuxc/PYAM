@@ -1,0 +1,11 @@
+BUG: rolling.corr with MultiIndex columns (#43261)
+
+* BUG: rolling.corr with MultiIndex columns
+
+* Add commentary of fix
+
+* Trigger CI
+
+* Use from_arrays
+
+* Consider reordering

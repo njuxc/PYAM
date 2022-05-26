@@ -1,0 +1,18 @@
+[AIRFLOW-6740] Remove Undocumented, deprecated, dysfunctional PROXY_FIX_NUM_PROXIES (#7359)
+
+This parameter is deprecated by werkzeug, see:
+https://github.com/pallets/werkzeug/blob/0.16.1/src/werkzeug/middleware/proxy_fix.py#L113-L120
+
+However, it is also broken. The value is acquired as string from the
+config, while it should be int like the other `x_*` attributes. Those
+were fixed in #6901, but `num_proxies` was forgotten.
+
+I think we can safely remove it because:
+
+* There is virtually no possibility that someone is using that parameter
+  in their config without raising an exception.
+* The configuration variable is not present in Airflow's docs or
+   anywhere else anymore. The removed line is the only trace of it.
+
+More details:
+https://issues.apache.org/jira/browse/AIRFLOW-6740

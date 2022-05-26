@@ -1,0 +1,3 @@
+Fixed #11483 -- Modified db cache backend to use db backend functions for date conversion, avoiding problems under Jython. Thanks to Leo Soto for the report and patch.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12411 bcc190cf-cafb-0310-a4f2-bffc1f526a37

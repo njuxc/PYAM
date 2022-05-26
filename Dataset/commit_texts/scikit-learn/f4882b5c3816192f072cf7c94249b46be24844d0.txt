@@ -1,0 +1,6 @@
+DOC + TST vocabulary arg in CountVect docstring
+
+Somewhere during the last refactoring, the documentation for the argument
+went missing.
+Also, check for Mapping subclass instead of hasattr "get" and test with a
+few different types.

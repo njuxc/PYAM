@@ -1,0 +1,2 @@
+CLN: Replace sphinx's rpartition with python's in-built one (#43360)
+

@@ -1,0 +1,12 @@
+[AIRFLOW-5354] Reduce scheduler CPU usage from 100% (#7552)
+
+A previous change ended up with the scheduler busily checking if the
+DagFDagFileProcessorAgent had collected any dags. This simple change
+takes the CPU usage of the scheduler from an entire core, to barely
+anything (dropped below 5%).
+
+Time for 10 dag runs of 9 dags with 108 total tasks: 50.3581s (±9.538s)
+vs master of Time for 10 dag runs of 9 dags with 108 total tasks: 49.6910s (±7.193s)
+
+The change is is basically no overall change, and is a quick fix for
+now, and bigger changes are in store around DAG parsing anyway.

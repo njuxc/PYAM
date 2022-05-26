@@ -1,0 +1,19 @@
+uri: check unexpected failure doesn't occur when file cannot be saved (#45824)
+
+* uri: fix TypeError when file can't be saved
+
+Fix the following exception (and others):
+
+    Traceback (most recent call last):
+      File "/home/lilou/debug_dir/__main__.py", line 604, in <module>
+        main()
+      File "/home/lilou/debug_dir/__main__.py", line 554, in main
+        write_file(module, url, dest, content, resp)
+      File "/home/lilou/debug_dir/__main__.py", line 320, in write_file
+        module.fail_json(msg="Destination dir '%s' not writable" % os.path.dirname(dest), **resp)
+    TypeError: fail_json() got multiple values for keyword argument 'msg'
+
+I would rather remove **resp from returned values but this module is
+flagged as stableinterface.
+
+* Static imports are more straight forward and preferred unless dynamic inclusion is required.

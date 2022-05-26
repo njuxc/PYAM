@@ -1,0 +1,20 @@
+[MRG+1] Return list instead of 3d array for MultiOutputClassifier.predict_proba (#8095)
+
+* Return list instead of 3d array for MultiOutputClassifier.predict_proba
+
+* Update flake8, docstring, variable name
+
+ - Changed `rs` to `rng` to follow convention.
+ - Made sure changes were flake8 approved
+ - Add `\` to continue docstring for `predict_proba` return value.
+
+* Sub random.choice for np.random.choice
+
+`np.random.choice` isn’t available in Numpy 1.6, so opt for the Python
+version instead.
+
+* Make test labels deterministic
+
+* Remove hanging chad...
+
+* Add bug fix and API change to whats new

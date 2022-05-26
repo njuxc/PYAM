@@ -1,0 +1,2 @@
+Fix deprecation warning in `to_categorical` (#4547)
+

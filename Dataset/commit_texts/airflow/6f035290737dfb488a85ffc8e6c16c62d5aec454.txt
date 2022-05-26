@@ -1,0 +1,7 @@
+Fix occasional cleartask failures (#18859)
+
+The cleartask tests occasionally failed due to not consistent
+sequence in which task clearing was performed.
+
+The query did not have ordering and sometimes the tasks were
+returned in different order than expected.

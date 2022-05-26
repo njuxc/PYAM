@@ -1,0 +1,2 @@
+Fixed bug: Dataframe.sort_values not raising ValueError for ascending-incompatible value and Series.sort_values raising ValueError for int value (#42684)
+

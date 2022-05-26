@@ -1,0 +1,2 @@
+BUG: Do not attempt to cache unhashable values in to_datetime (#39756) (#40414)
+

@@ -1,0 +1,3 @@
+fix regex in plugins/terminal/iosxr.py (#54817)
+
+Fixes situations where iosxr terminals that do not contain new line "/r/n" at the beginning of CLI timeouts due to regex error. Just make "/r/n" optional including "*" character in the regex

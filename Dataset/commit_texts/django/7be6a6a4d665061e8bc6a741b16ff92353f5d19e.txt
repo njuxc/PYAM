@@ -1,0 +1,1 @@
+Fixed #31989 -- Fixed return value of django.core.files.locks.lock()/unlock() on POSIX systems.

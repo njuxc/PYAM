@@ -1,0 +1,2 @@
+Use io.open and utf8 encoding to fix UnicodeDecodeError for Python3 (#8671)
+

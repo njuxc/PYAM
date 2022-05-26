@@ -1,0 +1,17 @@
+BUG: pd.show_versions: json.decoder.JSONDecodeError (#39766)
+
+* BUG: Fix pd.show_versions as_json invalid JSON (#39701)
+
+* BUG: Separate multiple tests (39701)
+
+* BUG: Various minor improvements on test_show_versions (#39701)
+
+* BUG: Various test improvements to test_show_versions (#39701)
+
+* BUG: Remove unused function (#39701)
+
+* Update github issue number
+
+Co-authored-by: Marco Gorelli <marcogorelli@protonmail.com>
+
+Co-authored-by: Marco Gorelli <marcogorelli@protonmail.com>

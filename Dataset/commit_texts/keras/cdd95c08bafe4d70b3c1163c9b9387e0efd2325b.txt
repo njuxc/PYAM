@@ -1,0 +1,7 @@
+Fix issue #8454 (#8570)
+
+* fix issue #8454
+
+* fix issue #8454 when input is list or dict
+
+* incorporate changes from code review

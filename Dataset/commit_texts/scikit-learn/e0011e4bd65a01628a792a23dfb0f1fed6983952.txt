@@ -1,0 +1,6 @@
+[BUG] safe_asarray() converts sparse matrices dtype
+
+When called with a dtype kw argument, utils.safe_asarray() would
+not change the dtype of a sparse matrix. This has been fixed.
+
+Unit tests have been created for safe_asarray().

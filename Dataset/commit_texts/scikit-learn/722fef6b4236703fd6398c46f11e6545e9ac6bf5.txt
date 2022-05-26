@@ -1,0 +1,3 @@
+BUG use ValueError in BaseLibSVM.coef_
+
+NotImplementedError is for abstract methods.

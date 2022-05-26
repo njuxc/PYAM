@@ -1,0 +1,2 @@
+Fix fillna accepting downcast as dict (#40861)
+

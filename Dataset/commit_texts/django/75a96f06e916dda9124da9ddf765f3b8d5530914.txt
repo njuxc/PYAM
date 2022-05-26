@@ -1,0 +1,3 @@
+Fixed #21967: Added check for object in ModelFormMixin.get_form_kwargs.
+
+Thanks lagovas.lagovas at gmail.com for the report.

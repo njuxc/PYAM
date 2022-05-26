@@ -1,0 +1,5 @@
+Fixed #2315 -- added work around for Windows timezone setting (i.e. we can't do
+it). This will work until somebody wants to write some full Win32 timezone changing code for us. Thanks to Marc Fargas and SmileyChris for the combined patch.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@4487 bcc190cf-cafb-0310-a4f2-bffc1f526a37

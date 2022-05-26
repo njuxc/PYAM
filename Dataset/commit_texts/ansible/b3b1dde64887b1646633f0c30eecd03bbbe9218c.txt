@@ -1,0 +1,11 @@
+various fixes to command (#74212)
+
+* various fixes to command
+
+  - Updated splitter to allow for all expected args in ad-hoc
+  - Ensure we always return the returns we promissed to always return (i.e stderr/stdout)
+  - Updated docs to clarify creates/removes precdence in checking
+  - Removed abspath from chdir to allow reporting to handle symlinks correctly
+  - Corrected tests to new output messages
+
+Co-authored-by: Felix Fontein <felix@fontein.de>

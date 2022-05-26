@@ -1,0 +1,3 @@
+Fix python 3 compatibility for network id lookup (#45467)
+
+Due to a change in python 3 filters return filter instead of list. This breaks the network name to id lookup for the docker_swarm_module. By wrapping it in list it ensures it is a list when returned and the id is extracted.

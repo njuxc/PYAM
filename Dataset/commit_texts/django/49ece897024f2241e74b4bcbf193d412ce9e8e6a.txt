@@ -1,0 +1,7 @@
+Fixed some queries tests when primary key values are large.
+
+On CockroachDB, primary key values stored in these fields are larger
+than they accept. Fixes:
+queries.test_bulk_update.BulkUpdateNoteTests.test_multiple_fields,
+queries.test_bulk_update.BulkUpdateNoteTests.test_inherited_fields, and
+queries.tests.RelatedLookupTypeTests.test_values_queryset_lookup.

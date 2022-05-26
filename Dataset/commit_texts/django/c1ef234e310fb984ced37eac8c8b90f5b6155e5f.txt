@@ -1,0 +1,1 @@
+Fixed #23522 -- Changed reverse() to return a Unicode string; not bytes

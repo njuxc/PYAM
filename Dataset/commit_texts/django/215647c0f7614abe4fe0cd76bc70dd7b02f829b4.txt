@@ -1,0 +1,4 @@
+Fixed #20386 - Introspection problem on Oracle
+
+Made introspection always return a unicode as column name on Oracle.
+Thanks aaugustin for review and suggestion to use force_text().

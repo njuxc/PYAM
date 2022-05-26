@@ -1,0 +1,2 @@
+BUG: fix TypeError when looking up a str subclass on a DataFrame with DatetimeIndex (#37366) (#41406)
+

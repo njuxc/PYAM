@@ -1,0 +1,8 @@
+BugFix: Null execution date on insert to ``task_fail`` violating NOT NULL (#18979)
+
+Fixes #18943 null exec date on insert to task_fail
+
+The dag_run property isn't populated by refresh_from_db or when this is
+called from the failure handler when reaping zombies. This resulted in
+an IntegrityError violating the NOT NULL constraint on task_fail
+

@@ -1,0 +1,2 @@
+CI: suppress npdev warnings (#41730)
+

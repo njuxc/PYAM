@@ -1,0 +1,3 @@
+Fix download method in GCSToBigQueryOperator (#12442)
+
+closes: #12439

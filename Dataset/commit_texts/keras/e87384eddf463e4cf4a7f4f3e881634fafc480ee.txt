@@ -1,0 +1,3 @@
+Use tf.eye(), instead of np.eye() (#8246)
+
+Resolves https://github.com/fchollet/keras/issues/8232

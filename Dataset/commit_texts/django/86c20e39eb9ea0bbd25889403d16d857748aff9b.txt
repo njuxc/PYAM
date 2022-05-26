@@ -1,0 +1,8 @@
+Fixed connection.queries encoding handling on Oracle
+
+In addition, removed a possibly problematic .filter() call from
+backends.test_query_encoding test. It is possible the .filter could
+cause collation problems on MySQL, and as it wasn't absolutely needed
+for the test it seemed better to get rid of the call.
+
+Refs #18461.

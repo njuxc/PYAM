@@ -1,0 +1,10 @@
+Fixed #17837. Improved markdown safety.
+
+Markdown enable_attributes is now False when safe_mode is enabled. Documented
+the markdown "safe" argument. Added warnings when the safe argument is
+passed to versions of markdown which cannot be made safe. Deprecated
+versions of markdown < 2.1. Many thanks to ptone for the patch.
+
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@17735 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,6 @@
+ENH TfidfTransformer.transform() performance bug fix (#7125)
+
+* Fix performance bug in TfidfTransformer.transform()
+
+save self._idf_diag as csr_matrix to avoid transforming self._idf_diag to csr_matrix each transform() call.
+It happens when self.use_idf==True in: X = X * self._idf_diag in __mul__ operator.

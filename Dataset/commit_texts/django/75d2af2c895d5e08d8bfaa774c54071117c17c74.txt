@@ -1,0 +1,4 @@
+Removed unneeded iri_to_uri() call in reverse().
+
+_reverse_with_prefix() already quotes using a stricter subset of the
+safe characters used by iri_to_uri().

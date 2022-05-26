@@ -1,0 +1,3 @@
+Fix failing TestSlackWebhookHook (#9260)
+
+`conn_type` was enforced by #9187

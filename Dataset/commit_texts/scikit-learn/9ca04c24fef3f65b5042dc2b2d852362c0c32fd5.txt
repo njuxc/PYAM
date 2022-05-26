@@ -1,0 +1,4 @@
+Fix for overflow warning
+
+Use expit function to compute the negative gradient and
+avoid exp overflow.

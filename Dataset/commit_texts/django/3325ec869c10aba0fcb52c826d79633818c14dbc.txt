@@ -1,0 +1,1 @@
+Fixed #24045 -- Removed useless mark_safe() call in trans_null.py

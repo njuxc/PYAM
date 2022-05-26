@@ -1,0 +1,2 @@
+Bug in Series constructor returning wrong missing values (#43026)
+

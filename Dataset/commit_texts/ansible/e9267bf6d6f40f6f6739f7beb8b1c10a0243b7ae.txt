@@ -1,0 +1,21 @@
+Cloudformation info checkmode (#65958)
+
+* set supports_check_mode=True
+
+I don't see any reason why this module cannot run in check mode.  The following API calls are made, none of which modify configurations
+
+All using boto3.client('cloudformation')
+describe_change_set
+describe_stacks
+describe_stack_events
+get_paginator
+get_stack_policy
+get_template
+list_change_sets
+list_stack_resources
+
+* duplicate cloudformation_info tasks with checkmode
+
+Duplicated all existing cloudformation_info tests and added check_mode: yes to them
+
+* delete duplicate empty line

@@ -1,0 +1,8 @@
+Handle exception raised in recursive_finder API (#49590)
+
+User module can contain Indentation errors or syntax errors.
+Handle AST exceptions rather than showing traceback while importing such module.
+
+Fixes: #21707
+
+Signed-off-by: Abhijeet Kasurde <akasurde@redhat.com>

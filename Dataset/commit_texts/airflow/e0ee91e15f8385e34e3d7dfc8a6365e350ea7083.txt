@@ -1,0 +1,3 @@
+Scheduler should not fail when invalid executor_config is passed (#14323)
+
+closes #14182 

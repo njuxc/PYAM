@@ -1,0 +1,7 @@
+provider_segmentation_id is int (#51600)
+
+According to the OpenStack Networking API
+the attribute provider:segmentation_id of a network has to be
+an integer.
+Even if neutron accepts provider:segmentation_id to be a
+string, other implementations may not.

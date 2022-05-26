@@ -1,0 +1,10 @@
+Display explicit error in case UID has no actual username (#15212)
+
+Fixes #9963 : Don't require a current username
+
+Previously, we used getpass.getuser() with no fallback, which errors out
+if there is no username specified for the current UID (which happens a
+lot more in environments like Docker & Kubernetes). This updates most
+calls to use our own copy which has a fallback to return the UID as a
+string if there is no username.
+

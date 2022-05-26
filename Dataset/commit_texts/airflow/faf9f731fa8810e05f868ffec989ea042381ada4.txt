@@ -1,0 +1,3 @@
+Handle and log exceptions raised during task callback (#17347)
+
+Add missing exception handling in success/retry/failure callbacks

@@ -1,0 +1,2 @@
+Fixed #31392 -- Avoided unnecessary SchemaEditor.effective_default() calls when altering a field.
+

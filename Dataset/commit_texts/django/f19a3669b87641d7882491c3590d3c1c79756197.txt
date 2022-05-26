@@ -1,0 +1,4 @@
+Fixed #14786 -- Fixed get_db_prep_lookup calling get_prep_value twice if prepared is False.
+
+Thanks homm for the report and Aramgutang and lrekucki for work on
+the patch.

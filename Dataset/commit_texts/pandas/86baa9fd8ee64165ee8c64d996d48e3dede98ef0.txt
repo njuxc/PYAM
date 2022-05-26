@@ -1,0 +1,2 @@
+BUG: Series(dask.array) GH#38645 (#42577)
+

@@ -1,0 +1,12 @@
+Fixed #27595 -- Made ForeignKey.get_col() follow target chains.
+
+Previously, foreign relationships were followed only one level deep which
+prevents foreign keys to foreign keys from being resolved appropriately.
+This was causing issues such as improper database value conversion for
+UUIDField on SQLite because the resolved expression's output field's
+internal type wasn't correct. Added tests to make sure unlikely foreign
+reference cycles don't cause recursion errors.
+
+Refs #24343.
+
+Thanks oyooyo for the report and Wayne Merry for the investigation.

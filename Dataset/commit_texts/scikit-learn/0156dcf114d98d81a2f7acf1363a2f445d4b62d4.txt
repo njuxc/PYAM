@@ -1,0 +1,7 @@
+BUG Use epsilon threshold in `_samme_proba` and `_boost_real`
+
+Instead of thresholding <0 probabilities to 1e-5, threshold <epsilon to epsilon. This avoids the issue of, e.g., probability values of 0 becoming larger than values of 1e-7.
+
+Add a unit test for `_samme_proba` which checks that probability ordering is unchanged.
+
+Resolves issue #4944 .

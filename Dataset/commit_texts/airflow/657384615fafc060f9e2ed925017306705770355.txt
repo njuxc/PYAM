@@ -1,0 +1,6 @@
+Fix `logging.exception` redundancy (#14823)
+
+Having both `logging.exception` and any other `logging` methods side by side seems unnecessary, and may lead to misread.
+- Per [doc](https://docs.python.org/3/library/logging.html#logging.Logger.exception), the first argument of `logging.exception` is a string-like `msg`.
+- `logging.exception(msg)` ≡ `logging.error(msg, exc_info=True)`
+- `exc_info=True` will add `str(exception)` at the end of trace anyway.

@@ -1,0 +1,8 @@
+[AIRFLOW-3973] Commit after each alembic migration (#4797)
+
+If `Variable`s are used in DAGs, and Postgres is used for the internal
+database, a fresh `$ airflow initdb` (or `$ airflow resetdb`) spams the
+logs with error messages (but does not fail).
+
+This commit corrects this by running each migration in a separate
+transaction.

@@ -1,0 +1,7 @@
+BUG enforce and document max. n_features for FeatureHasher
+
+Using a larger number might work sometimes, but produce bogus
+results, or it may cause cryptic error messages from scipy.sparse.
+
+Also justify the use of a single hash function for those who have
+read Weinberger's paper.

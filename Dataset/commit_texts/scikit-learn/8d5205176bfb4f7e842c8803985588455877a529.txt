@@ -1,0 +1,1 @@
+fix for issue #4051; replaced X = np.asarray(X) with check_array(...) method

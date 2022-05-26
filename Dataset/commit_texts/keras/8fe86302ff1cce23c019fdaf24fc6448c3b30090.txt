@@ -1,0 +1,25 @@
+Fix redundant functions' module names in auto-gen docs (#10664)
+
+### Summary
+This PR fixes the redundant function module names in auto-gen docs. Currently, the module name of functions (those which are not methods of a class) is repeated two times in documentation. [For example](https://keras.io/preprocessing/sequence/#pad_sequences):
+> `keras.preprocessing.sequence.keras.preprocessing.sequence.pad_sequences`
+
+which should be: `keras.preprocessing.sequence.pad_sequences`.
+Further, this PR also removes from the docs the (wrong) module name of methods of classes like `ImageDataGenerator`. For example, [this is for `apply_transform`](https://keras.io/preprocessing/image/#apply_transform):
+
+> `keras.preprocessing.image.apply_transform` 
+
+which should simply be `apply_transform`, first because it is the method of a class (i.e. `ImageDataGenerator`) and second because the referenced module name is wrong (and this [has caused confusion](https://stackoverflow.com/q/51311062/2099607)).
+
+All of this were caused by the fact that `clean_module_name()` was not called on the `function.__module__` in `render_function` (therefore this mostly affects the docs for `keras.preprocessing` and `keras.applications`). Plus, the way `autogen.py` works, the module name is repeated two times in the signature, but for the non-method functions it should be removed only once (that's why I have added a condition).
+
+### Related Issues
+#10658 
+#10662 
+
+### PR Overview
+
+- [n] This PR requires new unit tests [y/n] (make sure tests are included)
+- [n] This PR requires to update the documentation [y/n] (make sure the docs are up-to-date)
+- [y] This PR is backwards compatible [y/n]
+- [n] This PR changes the current API [y/n] (all API changes need to be approved by fchollet)

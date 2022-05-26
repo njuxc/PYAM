@@ -1,0 +1,22 @@
+Fix occasional external task sensor tests (#18853)
+
+Occassionally the sensor tests fail with assertion where
+state seems to be None. This might be caused by
+
+```
+      def assert_ti_state_equal(task_instance, state):
+          """
+          Assert state of task_instances equals the given state.
+          """
+          task_instance.refresh_from_db()
+  >       assert task_instance.state == state
+  E       AssertionError: assert None == <TaskInstanceState.SUCCESS: 'success'>
+  E        +  where None = <TaskI$anstance: dag_1.task_b_1 manual__2015-01-01T00:00:00+00:00 [None]>.state
+```
+
+Turned out it was because the task instance fields from
+dagrun.taskinstance relationship could be returned in different
+order so some of the dependencies were not met for some of the
+tasks when later task was returned before earlier one.
+
+Deterministic sorting according to task_id solved the problem.

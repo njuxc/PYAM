@@ -1,0 +1,3 @@
+Fixed #28249 -- Removed unnecessary dict.keys() calls.
+
+iter(dict) is equivalent to iter(dict.keys()).

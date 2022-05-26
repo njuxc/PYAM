@@ -1,0 +1,16 @@
+Fix logging error with task error when JSON logging is enabled (#14456)
+
+If the JSON logging mode for Elasticsearch logs is enabled, the
+handle_failure function would fail, as it tried to treat the exception
+object as the message and try to JSON serialize it (it expected a
+string) -- which fails with:
+
+```
+TypeError: Object of type type is not JSON serializable
+...
+  File "/usr/local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1150, in handle_failure
+    self.log.exception(error)
+...
+  File "/usr/local/lib/python3.7/site-packages/airflow/utils/log/file_task_handler.py", line 63, in emit
+    self.handler.emit(record)
+```

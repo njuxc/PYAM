@@ -1,0 +1,3 @@
+ENH: don't call astype when a copy is not needed
+
+See #2206. This doesn't fix all of the cases.

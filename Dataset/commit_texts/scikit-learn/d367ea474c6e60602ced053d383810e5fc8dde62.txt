@@ -1,0 +1,2 @@
+MNT Avoid calling check_array/check_X_y twice (#16044)
+

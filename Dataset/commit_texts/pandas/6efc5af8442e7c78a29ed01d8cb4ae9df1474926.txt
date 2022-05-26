@@ -1,0 +1,2 @@
+BUG: construct_1d_ndarray_preserving_na with dt64/td64 and object dtype (#40068)
+

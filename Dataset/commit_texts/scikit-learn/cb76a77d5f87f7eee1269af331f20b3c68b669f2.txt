@@ -1,0 +1,3 @@
+BUG fix issue #753, "Sparse OneClassSVM missing argument to super()"
+
+Only affects backwards compat version in sklearn.svm.sparse.

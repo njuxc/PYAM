@@ -1,0 +1,7 @@
+Fix Celery executor getting stuck randomly because of reset_signals in multiprocessing (#15989)
+
+Fixes #15938
+
+multiprocessing.Pool is known to often become stuck. It causes celery_executor to hang randomly. This happens at least on Debian, Ubuntu using Python 3.8.7 and Python 3.8.10. The issue is reproducible by running test_send_tasks_to_celery_hang in this PR several times (with db backend set to something other than sqlite because sqlite disables some parallelization)
+
+The issue goes away once switched to concurrent.futures.ProcessPoolExecutor. In python 3.6 and earlier, ProcessPoolExecutor has no initializer argument. Fortunately, it's not needed because reset_signal is no longer needed because the signal handler now checks if the current process is the parent.

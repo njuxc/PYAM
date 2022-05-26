@@ -1,0 +1,3 @@
+Fixed #2148 -- Now escaping ForeignKey fields correctly in Django admin change-list pages. Thanks, rushman@mail.ru
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@3124 bcc190cf-cafb-0310-a4f2-bffc1f526a37

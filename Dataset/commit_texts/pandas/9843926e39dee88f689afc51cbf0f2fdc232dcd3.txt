@@ -1,0 +1,2 @@
+CLN: clarify TypeError for IndexSlice argument to pd.xs (#35411)
+

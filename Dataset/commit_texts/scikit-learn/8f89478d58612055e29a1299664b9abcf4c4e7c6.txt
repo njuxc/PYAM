@@ -1,0 +1,5 @@
+[MRG + 1] Removes estimator method check in cross_val_predict before fitting (#9641)
+
+* Removes check in cross_val_predict that checks estimator method before fitting
+
+* Adds regression test for issue #9639

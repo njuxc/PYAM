@@ -1,0 +1,5 @@
+Fixed #26888 -- Fixed concurrency issue in URL resolver.
+
+Fixed a regression in 625b8e9295d79650208bfb3fca8bf9e6aaf578e4:
+improper short-circuiting could lead to a KeyError when threads
+concurrently call RegexURLResolver._populate().

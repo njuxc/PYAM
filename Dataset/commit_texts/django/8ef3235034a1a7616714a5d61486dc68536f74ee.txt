@@ -1,0 +1,11 @@
+Fixed #19720 -- Oracle ordering related delete regression
+
+When a query had a complex where condition (a condition targeting more
+than the base table) a subquery was used for deletion. However, the
+query had default ordering from the model's meta and Oracle doesn't
+work with ordered subqueries.
+
+The regression was caused by fast-path deletion code introduced in
+1cd6e04cd4f768bcd4385b75de433d497d938f82 for fixing #18676.
+
+Thanks to Dylan Klomparens for the report.

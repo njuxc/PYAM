@@ -1,0 +1,1 @@
+Fixed #18530 -- Fixed a small regression in the admin filters where wrongly formatted dates passed as url parameters caused an unhandled ValidationError. Thanks to david for the report.

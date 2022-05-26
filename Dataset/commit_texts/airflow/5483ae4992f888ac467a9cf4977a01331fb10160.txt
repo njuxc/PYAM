@@ -1,0 +1,6 @@
+[AIRFLOW-5463] Use same session to delete and add variable in set (#6807)
+
+Why:
+* In our system we had a postgres connection error during Variable.set
+resulting in the variable being deleted. The intention of this change is
+that an error should leave the variable unchanged.

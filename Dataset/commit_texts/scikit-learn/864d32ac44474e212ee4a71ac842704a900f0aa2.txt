@@ -1,0 +1,2 @@
+MNT Removed redundant checks when calling scorer/get_scorer (#14658)
+

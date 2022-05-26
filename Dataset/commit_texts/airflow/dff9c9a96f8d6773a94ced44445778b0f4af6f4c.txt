@@ -1,0 +1,5 @@
+Fixes flaky test test_should_response_200_with_reset_dag_run (#11817)
+
+Sometimes the rows were returned in reverse order.
+
+Fixes #11816

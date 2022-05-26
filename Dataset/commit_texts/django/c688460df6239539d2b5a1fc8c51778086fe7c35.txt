@@ -1,0 +1,9 @@
+Removed rmtree_errorhandler.
+
+The stated reason for its introduction in d18d37ce no longer applies
+since Django's code repository was switched from Subversion to git.
+
+Furthermore it never had any effect because shutil.rmtree ignores its
+onerror argument when ignore_errors is True.
+
+The reason for its use in template management commands is unclear.

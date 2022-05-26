@@ -1,0 +1,12 @@
+Correct Jinja2 plugin math filter symmetric_difference() to not repeatedly (#45093)
+
+build its intersection set and unnecessarily unique the final result.
+
+The prior use of the intersect() function within the list comprehension
+conditional leads to the function being called for every value in the input
+list being processed, not efficient.  When the input lists a,b are large,
+the Ansible run time and resource utilization wildly increases generally
+never completing the operation.
+
+Unique of the intersection result is unnecessary as the source list union()
+is already unique.

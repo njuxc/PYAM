@@ -1,0 +1,2 @@
+CLN: fix numpy FutureWarning in tests (#41414)
+

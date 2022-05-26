@@ -1,0 +1,2 @@
+ENH Avoid calling _encode_check_unknown() twice in BaseEncoder.transform (#13810)
+

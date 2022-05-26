@@ -1,0 +1,41 @@
+Bugfix: ``TypeError`` when Serializing & sorting iterables (#15395)
+
+This bug got introduced in #14909. Removed sorting from list and tuple as list & tuples preserve order unlike set.
+
+The following DAG errors with: `TypeError: '<' not supported between instances of 'dict' and 'dict'`
+
+```python
+from airflow import models
+from airflow.operators.dummy import DummyOperator
+from datetime import datetime, timedelta
+params = {
+    "staging_schema": [{"key:":"foo","value":"bar"},
+                       {"key:":"this","value":"that"}]
+}
+
+with models.DAG(dag_id='test-dag',
+                start_date=datetime(2019, 2, 14),
+                schedule_interval='30 13 * * *',
+                catchup=False,
+                max_active_runs=1,
+                params=params
+                ) as dag:
+    my_task = DummyOperator(
+        task_id='task1'
+    )
+```
+
+Full Error:
+
+```
+  File "/usr/local/lib/python3.7/site-packages/airflow/serialization/serialized_objects.py", line 210, in <dictcomp>
+    return cls._encode({str(k): cls._serialize(v) for k, v in var.items()}, type_=DAT.DICT)
+  File "/usr/local/lib/python3.7/site-packages/airflow/serialization/serialized_objects.py", line 212, in _serialize
+    return sorted(cls._serialize(v) for v in var)
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+During handling of the above exception, another exception occurred:
+...
+```
+
+This is because `sorted()` does not work with dict as it can't compare. Removed sorting from list & tuples which fixes it.
+It also fails when we have set with multiple types.

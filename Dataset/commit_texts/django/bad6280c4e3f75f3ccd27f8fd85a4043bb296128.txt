@@ -1,0 +1,4 @@
+Refs #24324 -- Fixed get_app_template_dirs() UnicodeDecodeError on Python 2.
+
+The function implemented most of upath(), but skipped the check for
+strings that are already unicode.

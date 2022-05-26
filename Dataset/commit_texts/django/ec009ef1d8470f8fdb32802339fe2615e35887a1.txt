@@ -1,0 +1,5 @@
+Fixed #25986 -- Fixed crash sending email with non-ASCII in local part of the address.
+
+On Python 3, sending emails failed for addresses containing non-ASCII
+characters due to the usage of the legacy Python email.utils.formataddr()
+function. This is fixed by using the proper Address object on Python 3.

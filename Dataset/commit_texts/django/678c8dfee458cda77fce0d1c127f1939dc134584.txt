@@ -1,0 +1,3 @@
+Fixed #31680 -- Removed unnecessary getattr() call in DeferredAttribute.__get__().
+
+refresh_from_db() loads fields values.

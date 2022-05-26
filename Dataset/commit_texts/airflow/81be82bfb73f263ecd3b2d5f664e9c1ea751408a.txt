@@ -1,0 +1,5 @@
+Remove redundant logging in SFTP Hook (#16704)
+
+There is no equivalent logging in the store method – and arguably, a user of this hook who
+wants this sort of operation logging would want more information here such as bytes transferred, 
+transfer rate, etc.

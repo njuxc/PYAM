@@ -1,0 +1,16 @@
+Fixed #27486 -- Fixed Python 3.7 DeprecationWarning in intword and filesizeformat filters.
+
+intword and filesizeformat passed floats to ngettext() which is
+deprecated in Python 3.7. The rationale for this warning is documented
+in BPO-28692: https://bugs.python.org/issue28692.
+
+For filesizeformat, the filesize value is expected to be an int -- it
+fills %d string formatting placeholders. It was likely coerced to a
+float to ensure floating point division on Python 2. Python 3 always
+does floating point division, so coerce to an int instead of a float to
+fix the warning.
+
+For intword, the number may contain a decimal component. In English, a
+decimal component makes the noun plural. A helper function,
+round_away_from_one(), was added to convert the float to an integer that
+is appropriate for ngettext().

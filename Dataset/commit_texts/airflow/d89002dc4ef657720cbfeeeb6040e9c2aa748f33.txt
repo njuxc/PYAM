@@ -1,0 +1,2 @@
+AIRFLOW-5484: fix PigCliHook has incorrect named parameter (#6112)
+

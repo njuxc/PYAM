@@ -1,0 +1,1 @@
+Fixed #28860 -- Removed unnecessary len() calls.

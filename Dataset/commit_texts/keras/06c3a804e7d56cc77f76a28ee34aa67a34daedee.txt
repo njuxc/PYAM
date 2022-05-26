@@ -1,0 +1,2 @@
+Fix bug when channel=1 (#11123)
+

@@ -1,0 +1,9 @@
+MAINT: rename IOError -> OSError (#43366)
+
+* MAINT: rename IOError -> OSError
+
+* BUG: use TypeError (not OSError) when read_csv expects file path name or file-like object
+
+* FIX: bytes -> BytesIO buffer in __init__ for BaseExcelReader & ExcelFile
+
+* Fixes from pre-commit [automated commit]

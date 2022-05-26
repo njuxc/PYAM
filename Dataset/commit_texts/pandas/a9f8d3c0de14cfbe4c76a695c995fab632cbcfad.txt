@@ -1,0 +1,2 @@
+BUG: na parameter for str.startswith and str.endswith not propagating for Series with categorical dtype (#36249)
+

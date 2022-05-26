@@ -1,0 +1,2 @@
+REGR: indexing with list subclass (#42469)
+

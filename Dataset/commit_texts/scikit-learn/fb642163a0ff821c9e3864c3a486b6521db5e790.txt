@@ -1,0 +1,70 @@
+[MRG+1] Affinity propagation edge cases (#9612) (#9635)
+
+* Added test exposing non-convergence issues
+
+As discussed in issue #9612, expecting cluster centers to be an empty array and labels to be
+unique for every sample.
+
+* Addresses non-convergence issues
+
+Returns empty list as cluster center indices to prevent adding a dimension in fit() method,
+returns unique labels for samples making this consistent with (TBD) predict() behavior for
+non-convergence.
+
+* Made predict() handle case of non-convergence while fitting
+
+In this case, it will log a warning and return unique labels for every new sample.
+
+* Added helper function for detecting mutually equal similarities and preferences
+
+* Tidied imports
+
+* Immediately returning trivial clusters and labels in case of equal similarities and preferences
+
+* Simplified code for preference(s) equality test
+
+* Corrected for failing unit tests covering case of n_samples=1
+
+* Corrected for PEP8 line too long
+
+* Rewriting imports to comply with max 80-column lines
+
+* Simplified code
+
+n_samples == 1 case does not need a separate return statement.
+
+* Replaced logging warnings by warnings.warn()
+
+Added assertions for warnings in tests.
+
+* Marking function as non-public
+
+* Using mask instead of modifying S
+
+* Improvement suggested by review comment
+
+* Avoided casting preference to array twice
+
+* Readability improvements
+
+* Improved returned labels in case of no cluster centers
+
+Returning a unique label for every sample in X suggests that these were based on actual clusters.
+Since there are no clusters, it makes more sense to return a negative label for all samples,
+indicating there were no clusters.
+
+* PEP8 line too long
+
+* Avoided creating separate variable for preference as array
+
+* Corrected warning message
+
+* Making labels consistent with predict() behavior in case of non-convergence
+
+* Minor readability improvement
+
+* Added detail to test comment about expected result
+
+* Added documentation about edge cases
+
+* Added documentation to 'what's new'

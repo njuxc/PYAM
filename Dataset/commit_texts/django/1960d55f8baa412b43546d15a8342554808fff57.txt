@@ -1,0 +1,4 @@
+Refs #31040 -- Fixed crypt.crypt() call in test_hashers.py.
+
+An empty string is invalid salt in Python 3 and raises exception since
+Python 3.9, see https://bugs.python.org/issue38402.

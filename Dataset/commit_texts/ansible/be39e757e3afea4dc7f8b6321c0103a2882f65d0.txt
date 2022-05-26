@@ -1,0 +1,2 @@
+apply node_id parameter to swarm node removal (#53503)
+

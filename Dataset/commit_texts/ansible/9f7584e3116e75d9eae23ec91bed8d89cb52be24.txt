@@ -1,0 +1,6 @@
+meraki_admin - Added recently added return fields for query (#51876)
+
+* Added recently added return fields for query
+- Defined type of string for older fields too
+
+* Fix incorrect type for org_id

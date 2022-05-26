@@ -1,0 +1,11 @@
+Fix QueuedLocalWorker crashing with EOFError (#13215)
+
+LocalExecutor uses a multiprocessing.Queue to distribute tasks to the
+instances of QueuedLocalWorker. If for some reason LocalExecutor exits
+(e.g. because it encountered an unhandled exception), then each of the
+QueuedLocalWorker instances that it manages will also exit while trying
+to read from the task queue.
+
+This obfuscates the root cause of the issue, i.e. that the LocalExecutor
+terminated. By catching EOFError, logging an error and exiting gracefully
+we circumvent this issue.

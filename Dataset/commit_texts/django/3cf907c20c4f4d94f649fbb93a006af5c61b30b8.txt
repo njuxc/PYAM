@@ -1,0 +1,1 @@
+Fixed #30761 -- Prevented floatformat filter from returning a negative zero.

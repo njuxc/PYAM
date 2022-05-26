@@ -1,0 +1,11 @@
+Fix KubernetesPodOperator reattach when not deleting pods (#18070)
+
+This change:
+
+- ignores any pods already marked as complete instead of trying to
+  reattach to them.
+- properly marks all 'finished' unsuccessful pods that won't
+  be deleted.
+
+Combined, these allow `is_delete_operator_pod=False` and
+`reattach_on_restart=True` to function together properly during retries.

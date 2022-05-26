@@ -1,0 +1,1 @@
+Fix example using deprecated API, output was misleading.

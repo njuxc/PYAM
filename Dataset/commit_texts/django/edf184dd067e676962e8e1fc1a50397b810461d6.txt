@@ -1,0 +1,9 @@
+Fixed #32919 -- Optimized lexing & parsing of templates.
+
+This optimizes:
+- Lexer.create_token() by avoiding startswith() calls,
+- Parser.parse() by re-using the token type enum's value,
+- Parser.extend_nodelist() by removing unnecessary isinstance() check,
+- some Node subclasses by removing the implicit "nodelist" from
+  "child_nodelists",
+- Variable.__init__() by avoiding startswith() calls.

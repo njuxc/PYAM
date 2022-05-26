@@ -1,0 +1,8 @@
+Changed the default return type of ward_tree from bool to int
+
+Changed the return type for ward_tree function from bool to int to avoid
+an error when the parameter 'return_as' is set to 'numpy.ndarray', or when applying todense method to the sparse matrix returned.
+
+fix : when edges is empty
+
+added tests for grid_to_graph

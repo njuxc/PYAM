@@ -1,0 +1,3 @@
+Fixed #11764 -- Added a missing set of parentheses in a call calculating the select_related tables. Thanks to aurelio for the report and original patch, and wogan for the updated patch.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@13019 bcc190cf-cafb-0310-a4f2-bffc1f526a37

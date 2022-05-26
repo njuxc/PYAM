@@ -1,0 +1,9 @@
+Fixed #20950 -- Instantiate OrderedDict() only when needed
+
+The use of OrderedDict (even an empty one) was surprisingly slow. By
+initializing OrderedDict only when needed it is possible to save
+non-trivial amount of computing time (Model.save() is around 30% faster
+for example).
+
+This commit targetted sql.Query only, there are likely other places
+which could use similar optimizations.

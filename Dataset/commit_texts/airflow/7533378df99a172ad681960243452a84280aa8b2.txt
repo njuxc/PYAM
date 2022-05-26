@@ -1,0 +1,7 @@
+Access function to be pickled as attribute, not method, to avoid error. (#8823)
+
+* Access function to be pickled as attribute, not method, to avoid error.
+
+* Access type attribute to allow pickling.
+
+* Use getattr instead of type(self) to fix linting error.

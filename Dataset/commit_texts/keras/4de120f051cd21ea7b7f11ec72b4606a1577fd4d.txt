@@ -1,0 +1,2 @@
+Fix computation of receptive field size for 'channels_last' (#7200)
+

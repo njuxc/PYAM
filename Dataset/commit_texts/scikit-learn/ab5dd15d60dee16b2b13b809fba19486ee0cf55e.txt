@@ -1,0 +1,8 @@
+OPTIM Lower memory usage of spectral_embedding.
+
+When calling eigsh, -laplacian is given as an argument. Both laplacian
+and -laplacian are thus in memory. By computing -laplacian inplace,
+the extra copy is freed. This copy is not needed by the end of the
+function call. The memory reclaimed is therefore available for the eigsh
+call. In case of a RuntimeError, the laplacian is reverted to its old
+value to process lobpcg as usual.

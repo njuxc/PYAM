@@ -1,0 +1,5 @@
+Fix junos_command.py network module to support spaces in rpc args (#48343)
+
+* Fix junos_command.py network module to support spaces in rpc args
+
+*  Fix junos_command.py network module to support spaces in rpc args

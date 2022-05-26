@@ -1,0 +1,49 @@
+[AIRFLOW-2190] Fix TypeError when returning 404 (#4596)
+
+When processing HTTP response headers, gunicorn checks that the name of each
+header is a string. Here's the relevant gunicorn code:
+
+From gunicorn/http/wsgi.py, line 257
+
+    def process_headers(self, headers):
+        for name, value in headers:
+            if not isinstance(name, string_types):
+                raise TypeError('%r is not a string' % name)
+
+In Python3, `string_types` is set to the built-in `str`. For Python 2,
+it's set to `basestring`. Again, the relevant gunicorn code:
+
+From gunicorn/six.py, line 38:
+
+    if PY3:
+        string_types = str,
+        ...
+    else:
+        string_types = basestring,
+
+On Python2 the `b''` syntax returns a `str`, but in Python3 it returns `bytes`.
+`bytes` != `str`, so we get the following error when returning a 404 on
+Python3:
+
+    File "/usr/local/lib/python3.6/site-packages/airflow/www/app.py", line 166, in root_app
+    resp(b'404 Not Found', [(b'Content-Type', b'text/plain')])
+    File "/usr/local/lib/python3.6/site-packages/gunicorn/http/wsgi.py", line 261, in start_response
+    self.process_headers(headers)
+    File "/usr/local/lib/python3.6/site-packages/gunicorn/http/wsgi.py", line 268, in process_headers
+    raise TypeError('%r is not a string' % name)
+    TypeError: b'Content-Type' is not a string
+
+Dropping the `b` prefix in favor of the single-quote string syntax should work
+for both Python2 and 3, as demonstrated below:
+
+    Python 3.7.2 (default, Jan 13 2019, 12:50:15)
+    [Clang 10.0.0 (clang-1000.11.45.5)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> isinstance('foo', str)
+    True
+
+    Python 2.7.15 (default, Jan 12 2019, 21:43:48)
+    [GCC 4.2.1 Compatible Apple LLVM 10.0.0 (clang-1000.11.45.5)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> isinstance('foo', basestring)
+    True

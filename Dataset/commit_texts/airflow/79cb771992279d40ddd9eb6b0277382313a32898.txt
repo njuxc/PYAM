@@ -1,0 +1,2 @@
+Fixing re pattern and changing to use a single character class. (#11857)
+

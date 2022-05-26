@@ -1,0 +1,8 @@
+Stabilize flaky test_extra_operator_links_not_loaded_in_scheduler_loop (#18796)
+
+This test fails intermittently where _run_scheduler_loop does not
+do what it was supposed to do in tests. We run relevant scheduling
+methods instead and flush session in order to make sure that
+the relevant part of scheduling happened.
+
+This should get rid of flakiness of that test

@@ -1,0 +1,2 @@
+Check reporthook is not None before calling it (#8320)
+

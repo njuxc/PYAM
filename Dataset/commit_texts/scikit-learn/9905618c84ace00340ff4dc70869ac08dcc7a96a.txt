@@ -1,0 +1,4 @@
+ENH: MCD for large dataset
+
+No need to have that many initializations for large datasets: they lead
+to memory errors

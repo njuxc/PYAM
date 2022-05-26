@@ -1,0 +1,1 @@
+Fixed #22863: Improve clarity of makemigrations for non-db params

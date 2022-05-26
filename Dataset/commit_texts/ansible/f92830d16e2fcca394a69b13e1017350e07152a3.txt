@@ -1,0 +1,8 @@
+Fix zip content filtering in unarchive module (#76069)
+
+When we introduced an include parameter to the unarchive module, we
+inadvertenly flipped the exclusion logic. This flip meant that the
+unarchive module started rejecting files that should be extracted.
+
+This commit flips the bad logic and adds some tests that will make
+sure things do not go bad again.

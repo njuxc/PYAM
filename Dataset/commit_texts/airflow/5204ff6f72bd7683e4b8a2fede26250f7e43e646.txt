@@ -1,0 +1,5 @@
+Fix incorrect .airflowignore behavior with multiple nested directories (#11994)
+
+* Add failing test
+
+* Fix failing test

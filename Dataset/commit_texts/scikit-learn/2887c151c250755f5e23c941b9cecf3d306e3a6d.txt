@@ -1,0 +1,1 @@
++ Fix the bug of calling len when using sparse matrix for fit_params in cross_validation.py.

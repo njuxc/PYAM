@@ -1,0 +1,5 @@
+Support functions with string inputs in 2.2.0, fixes #10459 (#10460)
+
+* Map TensorFlow tensor with dtype=tf.string to NumPy dtype='object', fixes #10459
+
+* Replace _numpy_type(tensor) method with tf.as_dtype(tensor.dtype).as_numpy_dtype

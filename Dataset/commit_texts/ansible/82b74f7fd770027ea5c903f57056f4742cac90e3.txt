@@ -1,0 +1,9 @@
+iptables: Fixed get_chain_policy API (#69152)
+
+While getting policy name in get_chain_policy API,
+module does not require any additional parameters except chain
+Enabling flag in get_chain_policy API call fixes this.
+
+Fixes: #68612
+
+Signed-off-by: Abhijeet Kasurde <akasurde@redhat.com>

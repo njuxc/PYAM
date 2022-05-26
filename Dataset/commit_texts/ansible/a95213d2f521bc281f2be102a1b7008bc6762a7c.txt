@@ -1,0 +1,6 @@
+Switch to hashlib.sha256() for ansible-test (#72411)
+
+When FIPs mode is enable on centos-8, we are not able to load md5
+functions.
+
+Signed-off-by: Paul Belanger <pabelanger@redhat.com>

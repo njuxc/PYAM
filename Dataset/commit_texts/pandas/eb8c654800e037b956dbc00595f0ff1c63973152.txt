@@ -1,0 +1,17 @@
+BUG: in DataFrame.reset_index() only call maybe_upcast_putmask with ndarrays (#36876)
+
+* BUG: add check so maybe_upcast_putmask is only called  with ndarray
+
+* TST: add tests
+
+* DOC: add whatsnew
+
+* feedback: test roundtrip
+
+* feedback: parametrize on both examples from OP
+
+* move test to frame/test_alter_axes.py
+
+* fill mask in index with nan when not calling maybe_upcast_putmask
+
+* restore the fix

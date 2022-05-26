@@ -1,0 +1,8 @@
+PR #50068: Change profiler dir to non-temporary in Keras TensorBoard callback
+
+Imported from GitHub PR https://github.com/tensorflow/tensorflow/pull/50068
+
+This is to fix the issue https://github.com/tensorflow/tensorflow/issues/49852.
+Without the fix, the profiler dir will always be deleted for non-chief node under MWMS mode when Keras TensorBoard callback(https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/TensorBoard) is used.
+
+PiperOrigin-RevId: 385910950

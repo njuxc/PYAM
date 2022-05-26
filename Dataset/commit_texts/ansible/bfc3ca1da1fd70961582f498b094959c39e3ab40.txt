@@ -1,0 +1,6 @@
+Remove extra parameter in format_exc (#46251)
+
+`traceback.format_exc()` does not take any argument, this fix remove
+such occurances.
+
+Signed-off-by: Abhijeet Kasurde <akasurde@redhat.com>

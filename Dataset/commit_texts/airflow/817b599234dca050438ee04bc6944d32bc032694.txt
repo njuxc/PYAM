@@ -1,0 +1,9 @@
+Fix on_failure_callback when task receive SIGKILL (#15537)
+
+This PR fixes a case where a task would not call the on_failure_callback
+when there's a case of OOM. The issue was that task pid was being set
+at the wrong place and the local task job heartbeat was not checking the
+correct pid of the process runner and task.
+
+Now, instead of setting the task pid in check_and_change_state_before_execution,
+it's now set correctly at the _run_raw_task method

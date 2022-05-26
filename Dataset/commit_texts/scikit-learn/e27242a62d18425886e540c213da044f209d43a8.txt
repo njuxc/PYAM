@@ -1,0 +1,3 @@
+ENH enable sparse input in Isomap.fit (#8554)
+
+Also fix docstrings in locally_linear.py.

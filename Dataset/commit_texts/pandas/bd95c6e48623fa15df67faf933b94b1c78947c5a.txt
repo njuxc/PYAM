@@ -1,0 +1,2 @@
+REF: dont use np.abs in NDFrame.__abs__ (#43847)
+

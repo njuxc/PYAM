@@ -1,0 +1,2 @@
+[MRG] Fix FutureWarning in plot_partial_dependence_visualization_api.py (#16256)
+

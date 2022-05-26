@@ -1,0 +1,2 @@
+GCP resource representation uses "rrdatas" property instead of "target" (#51479)
+

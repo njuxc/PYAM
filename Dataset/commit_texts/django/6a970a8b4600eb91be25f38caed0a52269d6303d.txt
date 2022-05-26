@@ -1,0 +1,3 @@
+Fixed #32944 -- Avoided unnecessary WhereNode.add() calls.
+
+Co-authored-by: Mariusz Felisiak <felisiak.mariusz@gmail.com>

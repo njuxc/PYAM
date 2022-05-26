@@ -1,0 +1,4 @@
+Fix kubernetes engine system test (#18548)
+
+- Add 'in_cluster=False' argument to 'GKEStartPodOperator'
+- Change order of activating service account and setting project

@@ -1,0 +1,1 @@
+add tests for invalid argument + fixed a type error

@@ -1,0 +1,3 @@
+Fix celery executor bug trying to call len on map (#14883)
+
+Co-authored-by: RNHTTR <ryan@wiftapp.com>

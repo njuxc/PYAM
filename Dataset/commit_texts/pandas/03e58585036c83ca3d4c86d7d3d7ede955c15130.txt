@@ -1,0 +1,2 @@
+BUG: groupby.apply on the NaN group drops values with original axes return (#38257)
+

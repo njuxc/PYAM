@@ -1,0 +1,12 @@
+Introduced deterministic order in connection export (#11670)
+
+The tests for connection export failed when CLI tests are
+run in isolation. The problem was with non-deterministic
+sequence of returned rows from connection export query.
+
+Rather than fixing the test to accept the non-deterministic
+sequence, it is better idea to return them always in the
+connection_id order. This does not change functionality and
+is backwards compatible, but at the same time it gives stability
+in the export, which might be important if someone uses export
+to determine for example if some connections were added/removed.

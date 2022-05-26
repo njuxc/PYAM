@@ -1,0 +1,1 @@
+Refs #23919 -- Removed default 'utf-8' argument for str.encode()/decode().

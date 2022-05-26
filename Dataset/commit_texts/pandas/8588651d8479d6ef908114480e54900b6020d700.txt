@@ -1,0 +1,2 @@
+REF/PERF: move np.errstate out of core array_ops up to higher level (#40396)
+

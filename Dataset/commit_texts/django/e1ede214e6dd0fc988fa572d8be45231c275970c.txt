@@ -1,0 +1,5 @@
+Fixed #13668 -- Corrected database router methods invocation for ManyToMany fields without through models. Thanks craig.kimerer for the report and David Gouldin for the fix.
+
+This also adds tests for r14857.
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@15185 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,6 @@
+Fix stdout messes in `on_epoch_end` with verbose=1 (#9280)
+
+* fix stdout in `on_epoch_end` with verbose=1
+
+* move `ProgbarLogger` to the 2nd logger
+patch `fit_generator`

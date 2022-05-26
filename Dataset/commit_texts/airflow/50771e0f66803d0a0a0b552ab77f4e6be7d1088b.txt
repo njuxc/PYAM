@@ -1,0 +1,11 @@
+Do not let create_dagrun overwrite explicit run_id (#17728)
+
+Previous DAG.create_dagrun() has an weird behavior that when *all* of
+run_id, execution_date, and run_type are provided, the function would
+ignore the run_id argument and overwrite it by auto-generating a run_id
+with DagRun.generate_run_id(). This fix the logic to respect the
+explicit run_id value.
+
+I don't think any of the "Airflow proper" code would be affected by
+this, but the dag_maker fixture used in the test suite needs to be
+tweaked a bit to continue working.

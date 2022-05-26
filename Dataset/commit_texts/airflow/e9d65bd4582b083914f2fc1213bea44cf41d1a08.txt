@@ -1,0 +1,16 @@
+Decode Remote Google Logs (#13115)
+
+* decode remote google logs before returning
+
+The `Blob.download_as_string` function returns a byte which cause
+the log result to be displayed in a single line like:
+
+b"line1\nline2"
+
+instead of
+
+line1
+line2
+
+added an isinstance check to make sure it doesn't break if it
+returns string in some case and not others

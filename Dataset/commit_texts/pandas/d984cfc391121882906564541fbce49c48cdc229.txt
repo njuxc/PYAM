@@ -1,0 +1,5 @@
+TST: clean up series/frame api tests inheritance a bit (#15949)
+
+* TST: clean up series/frame api tests inheritance a bit
+
+* BUG: Index.to_series() is not copying the index

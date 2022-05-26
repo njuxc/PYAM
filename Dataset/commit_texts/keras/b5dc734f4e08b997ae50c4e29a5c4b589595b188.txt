@@ -1,0 +1,2 @@
+Changed name scope within bidirectional, fixing #5820 (#5939)
+

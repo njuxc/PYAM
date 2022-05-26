@@ -1,0 +1,3 @@
+Fix exception handling in credtash lookup (#51099)
+
+Exception does not have property message and ansible returns completely different exception because of this

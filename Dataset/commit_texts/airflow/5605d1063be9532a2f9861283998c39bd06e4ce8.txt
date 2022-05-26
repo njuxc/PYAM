@@ -1,0 +1,2 @@
+Fix DagBag bug when a dag has invalid schedule_interval (#11344)
+

@@ -1,0 +1,2 @@
+BUG: DataFrame arithmetic with subclass where constructor is not the subclass itself (#43897)
+

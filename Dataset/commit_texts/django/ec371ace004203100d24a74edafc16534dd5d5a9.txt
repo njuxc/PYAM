@@ -1,0 +1,4 @@
+Fixed #20650 -- Fixed {% filter %} incorrectly accepting 'escape' as argument
+
+Thanks to grzesiof for the report and to loic84 and Alex Gaynor
+for the review.

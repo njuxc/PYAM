@@ -1,0 +1,11 @@
+fix sparse categorical acc (#11100)
+
+* fix sparse categorical acc
+
+* fix style
+
+* flatten y_true for comparision
+
+* fix style
+
+* add comment about flatten y_true

@@ -1,0 +1,3 @@
+Bugfix: Scheduler fails if task is removed at runtime (#14057)
+
+closes https://github.com/apache/airflow/issues/13464

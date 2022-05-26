@@ -1,0 +1,8 @@
+[AIRFLOW-2575] Make gcs to gcs operator work with large files
+
+Use `GoogleCloudStorageHook.rewrite` instead of
+`copy` so that it
+works with files > 5TB
+
+Closes #3472 from torkjel/AIRFLOW-2575-gcs-to-gcs-
+operator-support-large-files

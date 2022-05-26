@@ -1,0 +1,15 @@
+Allow switching xcom_pickling to JSON/Pickle (#12724)
+
+Without this commit, the Webserver throws an error when
+enabling xcom_pickling in the airflow_config by setting `enable_xcom_pickling = True`
+(the default is `False`).
+
+Example error:
+
+```
+>           return pickle.loads(result.value)
+E           _pickle.UnpicklingError: invalid load key, '{'.
+
+airflow/models/xcom.py:250: UnpicklingError
+--------------------------------------------------
+```

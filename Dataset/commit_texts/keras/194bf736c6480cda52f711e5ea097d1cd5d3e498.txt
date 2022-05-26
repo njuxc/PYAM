@@ -1,0 +1,5 @@
+Fix RaggedTensorSpec loading when reviving model form SavedModel.
+
+A bunch of arguments were not passed to the __init__ making the spec incorrect.
+
+PiperOrigin-RevId: 382692661

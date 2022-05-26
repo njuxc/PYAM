@@ -1,0 +1,24 @@
+Only compare updated time when Serialized DAG exists (#13899)
+
+closes https://github.com/apache/airflow/issues/13667
+
+The following error happens when Serialized DAGs exist in Webserver or Scheduler but it has just been removed from serialized_dag table,
+mainly due to the removal of DAG file.
+
+```
+Traceback (most recent call last):
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/jobs/scheduler_job.py", line 1275, in _execute
+    self._run_scheduler_loop()
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/jobs/scheduler_job.py", line 1377, in _run_scheduler_loop
+    num_queued_tis = self._do_scheduling(session)
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/jobs/scheduler_job.py", line 1516, in _do_scheduling
+    self._schedule_dag_run(dag_run, active_runs_by_dag_id.get(dag_run.dag_id, set()), session)
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/jobs/scheduler_job.py", line 1629, in _schedule_dag_run
+    dag = dag_run.dag = self.dagbag.get_dag(dag_run.dag_id, session=session)
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/utils/session.py", line 62, in wrapper
+    return func(*args, **kwargs)
+  File "/home/app/.pyenv/versions/3.8.1/envs/airflow-py381/lib/python3.8/site-packages/airflow/models/dagbag.py", line 187, in get_dag
+    if sd_last_updated_datetime > self.dags_last_fetched[dag_id]
+```
+
+A simple fix is to just check if `sd_last_updated_datetime` is not `None` i.e. Serialized DAG for that dag_id is not None

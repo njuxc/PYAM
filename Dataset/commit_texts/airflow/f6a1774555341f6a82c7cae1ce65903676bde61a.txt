@@ -1,0 +1,3 @@
+Fix failing doc build (#14986)
+
+- For some reason pymongo's stable inventory fetch is redirecting, I can reproduce it locally too if I try to access https://pymongo.readthedocs.io/en/stable/objects.inv from by browser.

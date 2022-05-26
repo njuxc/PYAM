@@ -1,0 +1,3 @@
+Fixed #30453 -- Fixed crash of simple_tag() and inclusion_tag() when function is wrapped.
+
+getfullargspec() doesn't work with wrapped functions.

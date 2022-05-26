@@ -1,0 +1,18 @@
+[AIRFLOW-565] Fixes DockerOperator on Python3.x
+
+The issue is that `self.cli.pull()` returns
+`bytes()`, and not a string. Then,
+when we try to pass that to `json.loads()`, it
+raises an exception.
+
+The fix is to convert the bytes to a string by
+decoding it as "utf-8". We're
+hardcoding the encoding because, by the JSON
+schema, a JSON should encoded in
+UTF-8, UTF-16 or UTF-32. Considering we're only
+pulling images from Docker
+servers, we can be relatively safe that they'll
+behave correctly.
+
+Closes #1832 from vitorbaptista/bug/fixes-
+AIRFLOW-565

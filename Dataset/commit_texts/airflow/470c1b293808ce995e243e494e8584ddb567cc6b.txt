@@ -1,0 +1,8 @@
+Fix issue rendering k8s V1Pod (#11952)
+
+* Fix issue rendering k8s V1Pod
+
+Adds return statement for json serialization of k8s.V1Pod that
+previously caused errors in UI
+
+* fix task_instances

@@ -1,0 +1,37 @@
+Fix structure of generic snippet feature (#74932)
+
+* Fix struture of cli/doc.py snippet code.
+
+A couple releases ago, cli/doc.py was modified to mostly conform to the
+data processing pipeline steps.  format_plugin_doc() was the biggest
+exception in that refactor.  When the snippet code was made generic
+instead of being only for modules, the new code should have conformed to
+the data processing pipeline too.
+
+* Move the decision to output a snippet to the run() method alongside
+  the decision to output a listing versus plugin_docs.
+* Move the test for invalid plugin_types to the run() method as it
+  affects all snippets in this run, not just a single snippet. (-t can
+  only be specified once)
+* Rename get_snippet_text() to format_snippet() as:
+  * This is the data formatting step
+  * The format_snippet() name matches with its conceptual sibling,
+    format_plugin_doc().
+* Use ValueError inside of format_snippet() to flag unrecoverable errors
+  formatting a single snippet.
+* Emit a warning when format_snippet() raises ValueError and continue to
+  the next snippet.
+* If the yaml(?) or toml inventory plugin is specified for snippet output,
+  raise ValueError() so that the user sees a warning instead of simply
+  seeing blank output.
+* Do not modify arguments passed into format_snippet().  This is the
+  formatting step so data should not be modified.
+* Change _do_yaml_snippet() and _do_lookup_snippet() to operate side
+  effect free.
+* Fix raising of exceptions when formatting requred options for snippets.
+
+* Unrelated: Use to_text() instead of to_native when calling
+  display.warning(). to_native() is used for raising exceptions.  Not
+  for display methods.
+
+* Add a changelog

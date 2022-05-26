@@ -1,0 +1,1 @@
+Replace `exit` with `sys.exit` in Galaxy CLI.

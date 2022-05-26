@@ -1,0 +1,4 @@
+Applied latest changes to `ListMixin` from Aryeh Leib Taurog and added him to AUTHORS; fixed memory leak introduced in r10174 -- no longer call `ListMixin.__init__` and set methods manually because it created references that prevented garbage collection; fixed several routines that had no need to be class methods.
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@10494 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,5 @@
+Fixed #14871, #14872 -- ZAIDField didn't handle alll EMPTY_VALUES correctly and ZAPostCodeField didn't respect *args or **kwargs (such as required=False).  Also converted South African localflavor doctests into unittests.  We have always been at war with doctests.  Thanks to Idan Gazit.
+
+Fixing ZA localflavor clean() #14872
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@14956 bcc190cf-cafb-0310-a4f2-bffc1f526a37

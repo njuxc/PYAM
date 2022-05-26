@@ -1,0 +1,3 @@
+[py3] Fixed middleware tests.
+
+Removed several inappropriate .encode('utf-8') calls in the process.

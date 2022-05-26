@@ -1,0 +1,1 @@
+ENH: return dtype on invalid function in where is now float64

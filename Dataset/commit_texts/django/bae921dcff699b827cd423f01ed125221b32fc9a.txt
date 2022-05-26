@@ -1,0 +1,7 @@
+Fixed #11940 - ModelForm evaluates callable default values on form class creation
+
+Thanks to Harm Geerts for the report and initial patch.
+
+
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@12721 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,2 @@
+API/REGR: (re-)allow neg/pos unary operation on object dtype (#21590)
+

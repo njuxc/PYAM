@@ -1,0 +1,20 @@
+Fix deprecation warnings location in google provider (#16403)
+
+These warnings were being issued from the wrong location, making them
+hard for any users who hit them to fix
+
+```
+tests/serialization/test_dag_serialization.py::TestStringifiedDAGs::test_serialization
+  /opt/airflow/airflow/models/dagbag.py:317: DeprecationWarning: This operator is deprecated. Please use BigQueryUpdateDatasetOperator.
+    loader.exec_module(new_module)
+
+tests/serialization/test_dag_serialization.py::TestStringifiedDAGs::test_roundtrip_provider_example_dags
+tests/serialization/test_dag_serialization.py::TestStringifiedDAGs::test_serialization
+  /opt/airflow/airflow/models/baseoperator.py:181: DeprecationWarning: `destination_bucket` is deprecated please use `bucket_name`
+    result = func(self, *args, **kwargs)
+
+tests/serialization/test_dag_serialization.py::TestStringifiedDAGs::test_roundtrip_provider_example_dags
+tests/serialization/test_dag_serialization.py::TestStringifiedDAGs::test_serialization
+  /opt/airflow/airflow/models/baseoperator.py:181: DeprecationWarning: `destination_object` is deprecated please use `object_name`
+    result = func(self, *args, **kwargs)
+```

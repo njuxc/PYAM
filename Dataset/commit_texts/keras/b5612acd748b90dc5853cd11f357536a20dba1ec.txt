@@ -1,0 +1,2 @@
+Fix post_process_signature for floating point (#8247)
+

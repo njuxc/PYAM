@@ -1,0 +1,9 @@
+Enable colocate_gradients_with_ops=True (#3620)
+
+By default TensorFlow allocates all gradient matricies on gpu:0, which makes it pretty much impossible to do parallelize a large model.
+
+colocate_gradients_with_ops puts these matricies next to the operations, allowing you to split your model across multiple GPUs. I ran into this issue myself and this fixed it for me.
+
+I think it's also meant to set gradient computations to be done on the device where the operations are stored, but my belief about that comes from https://github.com/tensorflow/tensorflow/issues/2441
+
+I'm not sure why this isn't the default in TF, so I'm not sure if this should be behind a flag or something, but having to make my own patches to keras to do multi-GPU training seems like the wrong answer.

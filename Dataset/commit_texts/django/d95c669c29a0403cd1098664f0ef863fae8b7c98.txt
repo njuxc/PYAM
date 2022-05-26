@@ -1,0 +1,2 @@
+Fixed #26991 -- Fixed a crash in MySQL where SQL_AUTO_IS_NULL doesn't return a result.
+

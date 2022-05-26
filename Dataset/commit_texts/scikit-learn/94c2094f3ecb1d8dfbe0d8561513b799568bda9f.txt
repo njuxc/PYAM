@@ -1,0 +1,25 @@
+[MRG+1] BUG: MultiLabelBinarizer.fit_transform sometimes returns an invalid CSR matrix (#7750)
+
+* BUG: MultiLabelBinarizer makes invalid CSR matrix
+
+See https://github.com/scipy/scipy/issues/6719 for context.
+
+The gist is that the `inverse` array may have a different dtype than `yt.indices`, which causes trouble down the line because, in those cases, `yt.indices` and `yt.indptr` have different dtypes.
+
+Alternately, we could insert `yt.check_format(full_check=False)` after modifying the sparse matrix members.
+
+* Fixing for old numpy
+
+Older versions don't support kwargs for `astype`
+
+* Adding tests
+
+* line-wrapping
+
+* adding comment to tests
+
+[ci skip]
+
+* added rationale comment
+
+[ci skip]

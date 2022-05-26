@@ -1,0 +1,5 @@
+Misc: Slight optimisation (#9445)
+
+* Slight optimisation
+
+* PEP8 fix

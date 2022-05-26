@@ -1,0 +1,12 @@
+Fixed #13844 -- Avoid converting unknown db values to float
+
+This patch removes an unconditional float(value) conversion from db
+backend default convert_values() method. This can cause problems when
+aggregating over character fields for example. In addition, Oracle
+and SQLite already return the bare value from their convert_values().
+
+In the long term the converting should be done by fields, and the
+fields should then call database backend specific converters when
+needed. The current setup is inflexible for 3rd party fields.
+
+Thanks to Merlijn van Deen for the original patch.

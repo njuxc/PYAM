@@ -1,0 +1,3 @@
+Fixed #32986 -- Removed unneeded str.find() call in Lexer.create_token().
+
+Unnecessary since 47ddd6a4082d55d8856b7e6beac553485dd627f7.

@@ -1,0 +1,6 @@
+Moved get_serializer() call in dumpdata command.
+
+Moved the get_serializer() call within the condition that checks public
+serializers.  This will allow exceptions other than
+SerializerDoesNotExist to be raised in order to provide the caller with
+useful information, e.g when pyyaml is not installed.

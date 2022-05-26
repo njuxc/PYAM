@@ -1,0 +1,7 @@
+Allow check_mode with supports_generate_diff capability in cli_config (#51384)
+
+* If network cliconf support `supports_generate_diff` in
+  that case diff between running and cnadidate config
+  is generated within Ansible and if check_mode is enabled
+  in that case return only diff without actually invoking
+  edit_config()

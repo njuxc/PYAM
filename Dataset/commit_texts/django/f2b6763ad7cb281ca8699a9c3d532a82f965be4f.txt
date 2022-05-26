@@ -1,0 +1,4 @@
+Fixed #18387 -- Do not call sys.exit during call_command.
+
+Moved sys.exit(1) so as failing management commands reach it
+only when running from command line.

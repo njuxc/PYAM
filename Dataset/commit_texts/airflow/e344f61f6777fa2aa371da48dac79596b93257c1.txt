@@ -1,0 +1,2 @@
+[AIRFLOW-5661] Fix create_cluster method of GKEClusterHook (#6339)
+

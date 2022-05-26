@@ -1,0 +1,2 @@
+REF: dont catch TypeError in Loc (#42729)
+

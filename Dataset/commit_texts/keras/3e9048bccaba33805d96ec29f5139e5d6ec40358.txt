@@ -1,0 +1,15 @@
+Replace np.ceil() with a faster operation (#10184)
+
+* Replace ceil() with faster a operation
+
+Replacing np.ceil() with faster operations, as suggested in #8488
+
+* Revert "Replace ceil() with faster a operation"
+
+This reverts commit 74fe60b445377b4f1be1d0a36b4777d7ed4f1c1b.
+
+* Replace np.ceil() with a faster operation
+
+* Fix syntax error
+
+* Remove trailing whitespace

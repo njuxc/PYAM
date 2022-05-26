@@ -1,0 +1,5 @@
+Remove call to parse_returned_data when removing tmpdir
+
+_parsed_return_data should only be used with the return from a module.
+This location was invoking a remote shell command rather than a module
+so we don't want it here.

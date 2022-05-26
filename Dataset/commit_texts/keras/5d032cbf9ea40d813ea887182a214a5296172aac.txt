@@ -1,0 +1,1 @@
+Fix sequence to matrix vectorization

@@ -1,0 +1,11 @@
+[AIRFLOW-3705] Fix PostgresHook get_conn to use conn_name_attr (#5841)
+
+Update PostgresHook's get_conn method to directly call the specified
+conn_name_attr rather that always using self.postgres_conn_id.
+
+Currently subclassing PostgresHook requires overriding the
+postgres_conn_id attribute in order to establish a separate connection.
+
+Add an additional unit test for this case checking that the subclassed
+PostgresHook's get_conn calls the correct arguments and that the hook
+calls the correction connection_id in get_connection.

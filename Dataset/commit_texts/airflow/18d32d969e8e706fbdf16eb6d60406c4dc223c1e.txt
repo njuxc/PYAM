@@ -1,0 +1,6 @@
+utils: fix process races when killing processes (#5721)
+
+airflow.utils.helpers.reap_process_group() can throw uncaught OSErrors
+if processes exit at the wrong time in its execution. Fix this by
+catching all OSErrors that can arise due to a process race, and
+returning from them when the error is ESRCH (process not found).

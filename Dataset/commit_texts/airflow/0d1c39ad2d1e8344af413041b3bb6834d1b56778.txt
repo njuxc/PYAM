@@ -1,0 +1,4 @@
+Fix db shell for sqlite (#13907)
+
+closes: #12806
+

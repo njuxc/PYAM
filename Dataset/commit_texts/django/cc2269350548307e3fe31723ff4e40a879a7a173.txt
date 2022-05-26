@@ -1,0 +1,4 @@
+Fixed #32177 -- Made execute_from_command_line() use program name from the argv argument.
+
+This caused crash in environments where sys.argv[0] is incorrectly set
+to None.

@@ -1,0 +1,4 @@
+Fix broken MySQL Migration (#12904)
+
+We added a change https://github.com/apache/airflow/pull/12890 to fix type of `source_code` column
+in `dag_code` table. But looks like MySQL does not like if we don't specify nullable field.

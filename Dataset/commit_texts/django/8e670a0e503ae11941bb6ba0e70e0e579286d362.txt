@@ -1,0 +1,4 @@
+Refs #8261 -- Fixed regression introduced by fd219fa.
+
+ModelAdmin displayed the "View on site" link even if the Model didn't
+define the `get_absolute_url()` method.

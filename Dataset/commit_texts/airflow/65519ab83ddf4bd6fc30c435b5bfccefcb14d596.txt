@@ -1,0 +1,21 @@
+Fixes problem where conf variable was used before initialization (#16088)
+
+There was a problem that when we initialized configuration, we've run
+validate() which - among others - checkd if the connection is an `sqlite`
+but when the SQLAlchemy connection was not configured via variable but
+via secret manager, it has fallen back to secret_backend, which should
+be configured via conf and initialized.
+The problem is that the "conf" object is not yet created, because
+the "validate()" method has not finished yet and
+"initialize_configuration" has not yet returned.
+This led to snake eating its own tail.
+
+This PR defers the validate() method to after secret backends have
+been initialized. The effect of it is that secret backends might
+be initialized with configuration that is not valid, but there are
+no real negative consequences of this.
+
+Fixes: #16079
+Fixes: #15685
+
+starting

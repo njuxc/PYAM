@@ -1,0 +1,5 @@
+Fixed #26018 -- Prevented unecessary get_form() call in FormMixin.get_context_data().
+
+Changed "dict.setdefault" to "if x in dict" pattern so that get_form() would not
+be called unnecessarily, specifically in the case where FormMixin.form_invalid()
+calls get_context_data() with the current form.

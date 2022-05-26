@@ -1,0 +1,5 @@
+BUG: to_coo silently converting non-zero fill values (#43763)
+
+* BUG: to_coo silently converting non-zero fill values
+
+* fix to_coo benchmark to have 0 fill value

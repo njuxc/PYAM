@@ -1,0 +1,17 @@
+Fix when evaluation on Native Jinja and Python 3.10 (#75202)
+
+* Fix when evaluation on Native Jinja and Python 3.10
+
+* Add unit test
+
+* Add explaining comment
+
+* Enable jinja2_native before tests
+
+Co-Authored-By: Matt Martz <matt@sivel.net>
+
+* Sanity
+
+* Return native template module instead of modifying globals
+
+Co-authored-by: Matt Martz <matt@sivel.net>

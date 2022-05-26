@@ -1,0 +1,11 @@
+Fix undefined behaviour: preprocess_input copying/not copying the input arrays (#10153)
+
+* Add copy option for image preprocessing
+
+* Fix unnecessary import
+
+* Fix style
+
+* fix test error
+
+* Make modifications in-place instead

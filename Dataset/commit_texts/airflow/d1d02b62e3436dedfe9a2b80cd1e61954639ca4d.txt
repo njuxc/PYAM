@@ -1,0 +1,18 @@
+Switch to built-in data structures in SecretsMasker (#16424)
+
+Using Iterable in SecretsMasker might cause undesireable
+side effect in case the object passed as log parameter
+is an iterable object and actually iterating it is not idempotent.
+
+For example in case of botocore, it passes StreamingBody
+object to log and this object is Iterable. However it can be
+iterated only once. Masking causes the object to be iterated
+during logging and results in empty body when actual results
+are retrieved later.
+
+This change only iterates list type of objects and recurrently
+redacts only dicts/strs/tuples/sets/lists which should never
+produce any side effects as all those objects do not have side
+effects when they are accessed.
+
+Fixes: #16148

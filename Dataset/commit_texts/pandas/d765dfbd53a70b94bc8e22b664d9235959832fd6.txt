@@ -1,0 +1,2 @@
+API:  Make .shift always copy (Fixes #22397) (#22517)
+

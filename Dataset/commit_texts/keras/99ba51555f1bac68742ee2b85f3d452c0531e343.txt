@@ -1,0 +1,20 @@
+Redefine xrange for Python 3 (#7295)
+
+* xrange = range  # Python 3
+
+* raw_input = input  # Python 3
+
+* Update io_utils.py
+
+* Removing raw_input redefinition
+
+Somehow this breaks the test for this file :-(
+
+```python
+try:
+    raw_input          # Python 2
+except NameError:
+    raw_input = input  # Python 3
+```
+
+* Replace xrange() with range()

@@ -1,0 +1,4 @@
+[AIRFLOW-6642] Make local task job test less flaky (#7262)
+
+The heartbeat failed fast test is flaky - sometimes the time needed to run the
+test is longer than expected.

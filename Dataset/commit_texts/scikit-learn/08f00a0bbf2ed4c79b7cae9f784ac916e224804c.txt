@@ -1,0 +1,4 @@
+BF: Make MinCovDet work with n_samples >> n_features.
+
+When the number of samples war too large, we were looking for the 10 best
+matchs over less than 10 trials, which resultes in an error.

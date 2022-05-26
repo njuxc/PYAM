@@ -1,0 +1,34 @@
+Fixed #23831 -- Supported strings escaped by third-party libs in Django.
+
+Refs #7261 -- Made strings escaped by Django usable in third-party libs.
+
+The changes in mark_safe and mark_for_escaping are straightforward. The
+more tricky part is to handle correctly objects that implement __html__.
+
+Historically escape() has escaped SafeData. Even if that doesn't seem a
+good behavior, changing it would create security concerns. Therefore
+support for __html__() was only added to conditional_escape() where this
+concern doesn't exist.
+
+Then using conditional_escape() instead of escape() in the Django
+template engine makes it understand data escaped by other libraries.
+
+Template filter |escape accounts for __html__() when it's available.
+|force_escape forces the use of Django's HTML escaping implementation.
+
+Here's why the change in render_value_in_context() is safe. Before Django
+1.7 conditional_escape() was implemented as follows:
+
+    if isinstance(text, SafeData):
+        return text
+    else:
+        return escape(text)
+
+render_value_in_context() never called escape() on SafeData. Therefore
+replacing escape() with conditional_escape() doesn't change the
+autoescaping logic as it was originally intended.
+
+This change should be backported to Django 1.7 because it corrects a
+feature added in Django 1.7.
+
+Thanks mitsuhiko for the report.

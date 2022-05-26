@@ -1,0 +1,16 @@
+fix a bug in evaluating accuracy (#2736)
+
+* fix accuracy computation in MNIST siamese graph example
+
+previous code:
+```
+def compute_accuracy(predictions, labels):
+    '''Compute classification accuracy with a fixed threshold on distances.
+    '''
+    return labels[predictions.ravel() < 0.5].mean()
+```
+is not accuracy over all the samples, but over samples with negative prediction.
+
+* add space around  "=="
+
+follow François's suggestion

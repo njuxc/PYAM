@@ -1,0 +1,1 @@
+Fixed incorrect datatype in range function from the last commit

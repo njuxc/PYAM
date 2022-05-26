@@ -1,0 +1,7 @@
+Fix stop_gradient inconsistent API (#7416)
+
+The stop_gradient documentation states that the argument should be a list of
+variables. The Theano implementation crashes if the argument is a list of
+variables and the CNTK implementation crashes if it is not.
+
+This commit handles both cases as can be expected.

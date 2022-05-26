@@ -1,0 +1,3 @@
+Fix backwards compatibility without providing prefix since boto3 does more parameter validation than boto (#45308)
+
+Use .get() instead of assuming a rule has a Transitions or Filter key (both of which are optional)

@@ -1,0 +1,13 @@
+[unarchive] work on older RHEL with group: <gid> (#72098)
+
+Change:
+- No longer fail due to old Fedora/RHEL and our failure to try to cast
+  gids to integers before trying to pass them to getgrgid() before
+  trying to use them.
+- Add tests for user/mode for various unarchive formats.
+
+Test Plan:
+- New integration tests, ran against centos6 container
+
+Tickets:
+- Fixes #71903

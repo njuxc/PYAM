@@ -1,0 +1,7 @@
+Fix #42000 : ovirt_host_pm documentation for slot parameter (#42196)
+
+* Fix for #42000: ovirt_host_pm ignores slot parameter
+
+* Fix for #42000: ovirt_host_pm ignores slot parameter
+
+* Remove non-required slot parameter

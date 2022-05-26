@@ -1,0 +1,2 @@
+BUG: truncate has incorrect behavior when index has only one unique v… (#42366)
+

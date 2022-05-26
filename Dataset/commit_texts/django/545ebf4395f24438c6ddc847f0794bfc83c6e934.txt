@@ -1,0 +1,3 @@
+Improved [4180] to add HTML escaping on the primary-key value in the error message
+
+git-svn-id: http://code.djangoproject.com/svn/django/trunk@4181 bcc190cf-cafb-0310-a4f2-bffc1f526a37

@@ -1,0 +1,3 @@
+Fix sensor not providing arguments for GCSHook (#10074)
+
+Co-authored-by: Kamil Olszewski <kamil.olszewski@polidea.com>

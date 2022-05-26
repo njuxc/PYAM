@@ -1,0 +1,2 @@
+BUG: Add errors argument to to_csv() call to enable error handling for encoders (#32702)
+

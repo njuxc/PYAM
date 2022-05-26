@@ -1,0 +1,5 @@
+Fixed a time.time function replacement error that Prabhu found.
+
+From: eric <eric@cb17146a-f446-4be1-a4f7-bd7c5bb65646>
+
+git-svn-id: https://scikit-learn.svn.sourceforge.net/svnroot/scikit-learn/trunk@44 22fbfee3-77ab-4535-9bad-27d1bd3bc7d8
